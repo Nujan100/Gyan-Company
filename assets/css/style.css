@@ -816,7 +816,7 @@ section {
   margin: 0 0 6px 0;
   text-transform: uppercase;
   display: block;
-  font-weight: 600;
+  font-weight: 800;
   font-family: "Poppins", sans-serif;
   color: #37517e;
 }
@@ -841,9 +841,9 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
-.services .icon-box {
+.services .icon-box{
   box-shadow: 0px 0 25px 0 rgba(0, 0, 0, 0.1);
-  padding: 50px 30px;
+  padding: 10px 20px;
   transition: all ease-in-out 0.4s;
   background: #fff;
 }
@@ -859,9 +859,9 @@ section {
 }
 
 .services .icon-box h4 {
-  font-weight: 500;
+  font-weight: 800;
   margin-bottom: 15px;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .services .icon-box h4 a {
@@ -870,7 +870,7 @@ section {
 }
 
 .services .icon-box p {
-  line-height: 24px;
+  line-height: 15px;
   font-size: 14px;
   margin-bottom: 0;
 }
@@ -882,6 +882,137 @@ section {
 .services .icon-box:hover h4 a {
   color: #47b2e4;
 }
+
+
+
+.services .content {
+  padding: 60px 100px 0 100px;
+}
+
+.services .content h3 {
+  font-weight: 400;
+  font-size: 34px;
+  color: #37517e;
+}
+
+.services .content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.services .content p {
+  font-size: 15px;
+  color: #848484;
+}
+
+.services .img {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.services .accordion-list {
+  padding: 0 100px 60px 100px;
+}
+
+.services .accordion-list ul {
+  padding: 0;
+  list-style: none;
+}
+
+.services .accordion-list li+li {
+  margin-top: 15px;
+}
+
+.services .accordion-list li {
+  padding: 20px;
+  background: #fff;
+  border-radius: 4px;
+}
+
+.services .accordion-list a {
+  display: block;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+  padding-right: 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+.services .accordion-list span {
+  color: #47b2e4;
+  font-weight: 600;
+  font-size: 18px;
+  padding-right: 10px;
+}
+
+.services .accordion-list i {
+  font-size: 24px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.services .accordion-list p {
+  margin-bottom: 0;
+  padding: 10px 0 0 0;
+}
+
+.services .accordion-list .icon-show {
+  display: none;
+}
+
+.services .accordion-list a.collapsed {
+  color: #343a40;
+}
+
+.services .accordion-list a.collapsed:hover {
+  color: #47b2e4;
+}
+
+.services .accordion-list a.collapsed .icon-show {
+  display: inline-block;
+}
+
+.services .accordion-list a.collapsed .icon-close {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+
+  .services .content,
+  .services .accordion-list {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .services .img {
+    min-height: 400px;
+  }
+
+  .services .content {
+    padding-top: 30px;
+  }
+
+  .services .accordion-list {
+    padding-bottom: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .services .img {
+    min-height: 200px;
+  }
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Cta
