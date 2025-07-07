@@ -1,0 +1,40 @@
+S.N.	Name of Firm	Type	Address
+1	Nepal Education Foundation (Xavier Academy) Group	School/ College	Lazimpat, Kathmandu
+2	AITM College Group	School/ College	Khumaltar, Lalitpur
+3	Nepal Korea Friendship Municipality Hospital	Hospital	Madhyapur Thimi
+4	Kathmandu Don Bosco	School/ College	Lazimpat, Kathmandu
+5	Chelsea World School & College Pvt. Ltd Group	School/ College	Gokarneshwor 8
+6	Mahendra Vidya Ashram Bhaktapur Pvt. Ltd	School/ College	Pithbarahisthan, Bhaktpaur
+7	Decon Group	TV Production and sales	Gaththaghar, Madhyapur Thimi
+8	Gehendra Dhimal Foundation	NGO	Mandikhatar, Kathmandu
+9	Localtion Nepal	Film Production Company	Mandikhatar, Kathmandu
+10	Best Monteshori Elementry School Pvt.Ltd.)	School/ College	Lazimpat, Kathmandu
+11	WEBSOFT INTERNATIONAL PVT LTD.	Software	Ekantkuna,Lalitpur
+12	Active English School Bhaktpur P. Ltd.	School/ College	Siddhikali Chowk, Thimi
+13	A & N Ventures P. Ltd.	Trading	Maharaj Ganj
+14	Bhimsen Center	Hardware Paints Supply	Madhyapur Thimi
+15	Bajrashree	Hardware Paints Supply	Sinamangal, Kathmandu
+16	Bode Advanced Academy Bhaktapur Pvt.Ltd.	School/ College	Madhyapur Thimi
+17	purba pakhribas krishi kendra manch	NGO	Bagdol, Lalitrpu
+18	DG Technologies P. Ltd.	Software	Dhobighat, Lalitpur
+19	Jobsnepal Dot com	Software	Kupandol, Lalitupur
+20	Leadership Academy Nepal	Training	Mandikhatar, Kathmandu
+21	Krishna Enterprises	Gas supply	Millroad, Madhyapur Thimi
+22	Mahalaxmi Khadya Suppliers	Trading	Bode, Madhyapur Thimi
+23	Next Emerging Leaders Initiative for Sustainability Nepal	NGO	Prayas Nagar, Tokha
+24	Nerica Group P. Ltd.	Trading	Prayas Nagar, Tokha
+25	Old Bhaktapur Holidays Travels and Tours P. Ltd.	Travels	Madhyapur Thimi
+26	Peace Point Boarding School	School/ College	Katyani Chowk, Kathmandu
+27	R.H. Trade Center	Trading- Auto Parts	Khusibu, Kathmandu
+28	Rajaneshwori Suppliers	Trading- Foodstuff	Madhyapur Thimi
+29	Ram Metal Workshop	Metal Works productions	Dallu, Kathmandu
+30	Seabird International Colleg	School/ College	Madhyapur Thimi
+31	Shankhadar Memorial School	School/ College	Dakshin Barahi, Suryabinayak Municipality
+32	Shankhadhar Marga	NGO	Madhyapur Thimi
+33	Siddhikali Kshetra Samrakshan tatha bikash Samittee	NGO	Madhyapur Thimi
+34	Smooth Cargo Movers	Cargo-Export	Narayan Chaur
+35	Team Power Logistric P. Ltd.	Cargo- Import/ Export	Narayan Chaur
+36	Thimi Money Transfer	Money Transfer	Madhyapur Thimi
+37	TV Point Electronics	Trading- Electronics	Madhyapur Thimi
+38	KANTIPUR INTERNATIONAL EDUCATIONAL CONSULTANCY LALITPUR PVT.LTD.	Carrer Counciling	Lagankhel Lalitpur
+39	Nerica Group P. Ltd.	Traing- Organic Food stuff	Tokha, Kathmandu

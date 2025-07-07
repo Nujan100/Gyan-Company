@@ -2,691 +2,1439 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrecisionAudit - Professional Auditing Services</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <title>Gyan & Company</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assets/img/logo_gyan1.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0055a4",
+                        secondary: "#00a8e8",
+                        dark: "#1a1a1a"
+                    },
+                    fontFamily: {
+                        sans: ['"SF Pro Display"', 'sans-serif']
+                    }
+                },
+            },
+        };
+    </script>
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+
+        .parallax-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .parallax-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 85, 164, 0.25);
+        }
+
+        .text-gradient {
+            background: linear-gradient(120deg, #0055a4, #00a8e8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .webgl-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .card-reveal {
+            perspective: 1000px;
+        }
+
+        .card-face {
+            backface-visibility: hidden;
+            transition: transform 0.6s;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-front {
+            transform: rotateY(0deg);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .team-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+
+        @keyframes pulse-soft {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <img src="./assets/img/logo_gyans.png" alt="Logo" class="h-10 w-full rounded-full object-cover">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center">
-
-      <!-- <h1 class="logo me-auto"><a href="index.html">Gyan & Co.</a></h1> -->
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="index.html" class="logo me-auto white" style="background-color: rgba(248, 248, 248, 0.918); border-radius: 8px; padding: 5px;">
-        <img src="assets/img/logo_gyan.png" alt="" class="img-fluid">
-    </a>
-    
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <!-- <li><a class="nav-link   scrollto" href="#portfolio">Portfolio</a></li> -->
-          <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
-
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1"
-          data-aos="fade-up" data-aos-delay="200">
-          <h1>Better Solutions For Your Business</h1>
-          <h2>Ensuring integrity, building trust, delivering excellence.</h2>
-          <div class="d-flex justify-content-center justify-content-lg-start">
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
-            <!-- <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a> -->
-          </div>
-        </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-          <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
-        </div>
-      </div>
-    </div>
-
-  </section><!-- End Hero -->
-
-  <main id="main">
-
-
-
-    <!-- ======= About Us Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>About Us</h2>
-        </div>
-        <!-- ======= Clients Section ======= -->
-        <!-- <section id="clients" class="clients section-bg">
-          <div class="container">
-            <img src="assets/img/gyan.jpg">
-          </div>
-        </section> -->
-        <!-- End Cliens Section -->
-
-        <div class="row content" style="display: flex; flex-wrap: wrap; gap: 10px; padding: 10px;">
-          <div class="col-lg-6" style="flex: 1 1 50%; padding: 10px; box-sizing: border-box;">
-            <p
-              style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.6; color: #333; text-align: justify; margin-bottom: 20px;">
-              Gyan and Company is a renowned audit firm in Nepal, established on 15 August 1996
-              (2053 Shrawan 31). Initially, the firm was named G.K. Shrestha &amp; Company and was
-              registered with the Office of the Auditor General. In 1997, under the Chartered
-              Accountants Act, the firm was re-registered as Gyan and Company with the Institute of
-              Chartered Accountants of Nepal (ICAN).
-              <br>
-              The principal proprietor of the firm, Mr. Gyan Krishna Shrestha, is a Registered Auditor
-              with a B-class auditor license. He also holds an auditing license from the Institute of
-              Certified Management Accountants (ICMA) as a Certified Management Accountant
-              (CMA).
-            </p>
-            <!-- <a href="#" class="btn-learn-more">Learn More</a> -->
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End About Us Section -->
-
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us section-bg">
-      <div class="container-fluid" data-aos="fade-up">
-
-        <div class="row">
-
-          <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
-
-            <div class="content">
-              <h3><strong>License</strong></h3>
-              <p>
-                Here are list of certificates.
-              </p>
             </div>
-
-            <div class="accordion-list">
-              <ul>
-                <li>
-                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>01</span>
-                    National Audit License
-                    <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
-                    <p>
-                      The firm holds a national audit license from ICAN, Satdobato, Lalitpur.
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span>02</span>
-                    International Associations<i class="bx bx-chevron-down icon-show"></i><i
-                      class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                      Gyan and Company is a certified management accountant and is recognized
-                      internationally in over 170 countries. The firm’s principal, Mr. Gyan Krishna Shrestha,
-                      has voluntarily represented the Certified Management Accountants (CMA) in Nepal
-                      since 2000, promoting the CMA qualification across the country.
-                    </p>
-                  </div>
-                </li>
-
-                <li>
-                  <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span>
-                    About CMA (Certified Management Accountants)<i class="bx bx-chevron-down icon-show"></i><i
-                      class="bx bx-chevron-up icon-close"></i></a>
-                  <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
-                    <p>
-                      The Institute of Certified Management Accountants (CMA), based in Australia, offers a
-                      wide range of professional courses in accountancy and financial management to
-                      international students worldwide. Management accountants are regarded as “value-
-                      creators” within organizations, focusing on forward-looking decisions and strategies
-                      rather than solely on historical record-keeping.
-                      CMA professionals contribute to various organizational functions, including data
-                      analytics, treasury, governance, marketing, strategic auditing, logistics, and more.
-                      The CMA qualification is a valuable passport, offering global career opportunities in over
-                      170 countries.
-                    </p>
-                  </div>
-                </li>
-
-              </ul>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors">About</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-primary transition-colors">Services</a>
+                <a href="#case-studies" class="nav-link text-gray-700 hover:text-primary transition-colors">Clients</a>
+                <a href="#team" class="nav-link text-gray-700 hover:text-primary transition-colors">Our Team</a>
             </div>
-
-          </div>
-
-          <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img"
-            style='background-image: url("assets/img/why-us.png");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+            <a href="#contact"
+                class="hidden md:block bg-primary text-white px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all">Contact
+                Us</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i class="ri-menu-line ri-xl text-gray-700"></i>
+            </button>
         </div>
-
-      </div>
-    </section><!-- End Why Us Section -->
-
-    <!-- ======= Skills Section ======= -->
-    <section id="skills" class="skills">
-      <div class="container" data-aos="fade-up">
-
-        <div class="row">
-          <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-            <img src="assets/img/skills.png" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
-            <h3>License Details</h3>
-            <div class="skills-content">
-              <p class="fst-italic">
-                ICAN Membership No. 316 <br>
-                ICAN C.O.P. No. Kha 046 <br>
-                ICMA Membership No. 42710 <br>
-              </p>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-md shadow-lg absolute w-full">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About Us</a>
+                <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                <a href="#case-studies" class="text-gray-700 hover:text-primary transition-colors">Case Studies</a>
+                <a href="#team" class="text-gray-700 hover:text-primary transition-colors">Our Team</a>
+                <a href="#contact"
+                    class="bg-primary text-white px-6 py-2 rounded-lg text-center shadow-lg hover:shadow-xl transition-all">Contact
+                    Us</a>
             </div>
-            <br>
-            <h3>Firm Information</h3>
-            <p class="fst-italic">
-              Firm Information: <br>
-              Gyan &amp; Company ICAN Registered No.: 2447 <br>
-              PAN No.: 500056587 <br>
-              Madhyapur Thimi Municipality No.: 83/076-77 <br>
-            </p>
-          </div>
         </div>
+    </nav>
 
-      </div>
-    </section><!-- End Skills Section -->
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- 3D Background -->
+        <div id="hero-scene" class="webgl-background"></div>
 
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>
-            Since its establishment, Gyan and Company has offered various services including
-            statutory audits, tax audits, internal audits, cost audits, management audits, audit
-            reviews, consultancy services, and more. Some of the services provided by the firm
-            include:
-          </p>
+        <!-- Hero Content -->
+        <div class="container mx-auto px-6 py-24 relative z-10">
+            <div class="flex flex-col items-center text-center mb-16">
+                <div class="mb-8 floating">
+                    <div class="w-full h-20 mb-6">
+                        <img src="./assets/img/logo_gyans.png" alt="Logo" class="w-full h-full ">
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    Precision Auditing for <span class="text-gradient">Modern Business</span>
+                </h1>
+                <p class="text-xl text-gray-700 mb-10 max-w-2xl">
+                    Delivering comprehensive auditing solutions with cutting-edge technology and decades of industry
+                    expertise.
+                </p>
+                <a href="#contact"
+                    class="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                    Schedule a Consultation
+                </a>
+            </div>
+            <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-primary scroll-indicator">
+                <i class="ri-arrow-down-s-line ri-2x animate-bounce"></i>
+            </div>
         </div>
-        <div class="accordion-list">
-          <ul>
-
-
-            <li>
-              <a data-bs-toggle="collapse" data-bs-target="#accordion-list-5" class="collapsed"><span>01</span>
-                Statutory Independent Audit<i class="bx bx-chevron-down icon-show"></i><i
-                  class="bx bx-chevron-up icon-close"></i></a>
-              <div id="accordion-list-5" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  An external or statutory audit is an independent examination of the financial statements
-                  prepared by an organization. Our experienced team provides statutory audit services in
-                  compliance with the prevailing laws, rules, and regulations. We have experience
-                  conducting audits for proprietorships, partnerships, companies, and corporate houses.
-                </p>
-              </div>
-            </li>
-
-            <li>
-              <a data-bs-toggle="collapse" data-bs-target="#accordion-list-6" class="collapsed"><span>02</span>
-                Internal Audit<i class="bx bx-chevron-down icon-show"></i><i
-                  class="bx bx-chevron-up icon-close"></i></a>
-              <div id="accordion-list-6" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  Internal audit is an independent, objective assurance and consulting activity designed to
-                  add value and improve an organization’s processes. We provide periodic internal audit
-                  services, and the scope is tailored to the client&#39;s specific needs.
-                </p>
-              </div>
-            </li>
-            <li>
-              <a data-bs-toggle="collapse" data-bs-target="#accordion-list-7" class="collapsed"><span>03</span>
-                Statutory Financial Audits<i class="bx bx-chevron-down icon-show"></i><i
-                  class="bx bx-chevron-up icon-close"></i></a>
-              <div id="accordion-list-7" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  Our statutory financial audits provide assurance to you and your stakeholders regarding
-                  your company’s financial position. These audits often meet government or industry-
-                  specific requirements, while offering broader benefits to your organization.
-                </p>
-              </div>
-            </li>
-            <li>
-              <a data-bs-toggle="collapse" data-bs-target="#accordion-list-8" class="collapsed"><span>04</span>
-                Attestation Services<i class="bx bx-chevron-down icon-show"></i><i
-                  class="bx bx-chevron-up icon-close"></i></a>
-              <div id="accordion-list-8" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  Gyan &amp; Company offers attestation services, reporting on identified subject matters and
-                  management assertions. We help you focus on specific areas of your organization’s
-                  reporting needs.
-                </p>
-              </div>
-            </li>
-            <li>
-              <a data-bs-toggle="collapse" data-bs-target="#accordion-list-9" class="collapsed"><span>05</span>
-                Management Consulting<i class="bx bx-chevron-down icon-show"></i><i
-                  class="bx bx-chevron-up icon-close"></i></a>
-              <div id="accordion-list-9" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  Management consulting involves improving an organization’s performance through the
-                  analysis of current problems and the development of improvement plans. Our
-                  consultants provide expertise in organizational change, technology implementation,
-                  strategy development, and operational improvement.
-                </p>
-              </div>
-            </li>
-            <li>
-              <a data-bs-toggle="collapse" data-bs-target="#accordion-list-10" class="collapsed"><span>06</span>
-                Corporate Tax<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="accordion-list-10" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  we offer comprehensive corporate tax services, from routine compliance to specialized
-                  advice on planning and supporting your business strategies and transactions. We assist
-                  in ensuring tax efficiency throughout your business lifecycle:<br>
-                   Start-ups <br>
-                   Expansion and investment <br>
-                   Acquisitions and disposals <br>
-                   Raising finance/capital markets <br>
-                   Succession planning <br>
-                </p>
-              </div>
-            </li>
-            <li>
-              <a data-bs-toggle="collapse" data-bs-target="#accordion-list-11" class="collapsed"><span>07</span>
-                Tax Compliance<i class="bx bx-chevron-down icon-show"></i><i
-                  class="bx bx-chevron-up icon-close"></i></a>
-              <div id="accordion-list-11" class="collapse" data-bs-parent=".accordion-list">
-                <p>
-                  We help you ensure compliance with the Inland Revenue Department (IRD) of Nepal,
-                  using proven approaches for gathering tax data and submitting tax returns. We also
-                  advise on specialist areas such as R&amp;D tax credits, capital allowances, and managing
-                  tax inquiries.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-
-      </div>
     </section>
 
-    <!-- ======= Cta Section ======= -->
-    <section id="cta" class="cta">
-      <div class="container" data-aos="zoom-in">
-
-        <div class="row">
-          <div class="col-lg-9 text-center text-lg-start ">
-            <h3>Contact</h3>
-            <p style="color: white;"> 
-                <ul style="color: white;">
-                  <li>Phone: 01-5093381</li>
-                  <li>Mobile : +977 9851035589</li>
-                  <li>Email: gyankrishna@gmail.com / gyanandcompany4@gmail.com</li>
-                  <li><a href="https://gyanandco.com.np/">gyanandco.com.np</a></li>
-                </ul>
-            </p>
-            <h4 style="color: white;">
-             Please Scan the Virtual Card.
-            </h4>
-          </div>
-          <div class="col-lg-3 cta-btn-container text-center">
-            <!-- <a class="cta-btn align-middle" href="#">Call To Action</a> -->
-            <img class="container" src="styled_vcard_qr.png">
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Cta Section -->
-    <section id="team" class="team section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Team</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/gyan.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Gyan Krishna Shrestha</h4>
-                <span>Registered Auditor (RA), Certified Management
-                  Accountant (CMA)</span>
-                <!-- <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p> -->
-                <div class="social">
-                  <a href="https://www.facebook.com/gyankrishna.shrestha.5"><i class="ri-facebook-fill"></i></a>
-                  <a href="https://www.instagram.com/gyankrishnas?igsh=cTh2OTlqN2d2Ymgy"><i class="ri-instagram-fill"></i></a>
-                  <a href="https://np.linkedin.com/in/gyan-krishna-shrestha-290a49146"> <i class="ri-linkedin-box-fill"></i> </a>
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Comprehensive Services</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Since its establishment, Gyan and Company has offered various services including statutory
+                    audits, tax audits, internal audits, cost audits, management audits, audit reviews, consultancy
+                    services, and more.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-line-chart-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Statutory Independent Audit</h3>
+                    <p class="text-gray-700 mb-6">
+                        An external or statutory audit is an independent examination of the financial statements
+                        prepared by an organization. Our experienced team provides statutory audit services in
+                        compliance with the prevailing laws, rules, and regulations. We have experience conducting
+                        audits for proprietorships, partnerships, companies, and corporate houses.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/shres.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Subin Bajracharya</h4>
-                <span>Audit Assistant</span>
-                <span>
-                  Detail-oriented Audit Assistant ensuring accuracy and compliance in audits.
-                </span>
-                <!-- <p>Aut maiores voluptates amet et quis praesentium qui senda para</p> -->
-                <!-- <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-6 mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="member d-flex align-items-start">
-              <div class="pic"><img src="assets/img/pokheral.jpg" class="img-fluid" alt=""></div>
-              <div class="member-info">
-                <h4>Salina Pokhrel</h4>
-                <span>Audit Assistant</span>
-                <span>Supporting audit teams with meticulous financial review and analysis.</span>
-                <!-- <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p> -->
-                <!-- <div class="social">
-                  <a href=""><i class="ri-twitter-fill"></i></a>
-                  <a href=""><i class="ri-facebook-fill"></i></a>
-                  <a href=""><i class="ri-instagram-fill"></i></a>
-                  <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-                </div> -->
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Team Section -->
-
-    <!-- ======= Pricing Section ======= -->
-    <!-- <section id="pricing" class="pricing">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Pricing</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="box">
-              <h3>Free Plan</h3>
-              <h4><sup>$</sup>0<span>per month</span></h4>
-              <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li class="na"><i class="bx bx-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bx bx-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-              </ul>
-              <a href="#" class="buy-btn">Get Started</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
-            <div class="box featured">
-              <h3>Business Plan</h3>
-              <h4><sup>$</sup>29<span>per month</span></h4>
-              <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-              </ul>
-              <a href="#" class="buy-btn">Get Started</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
-            <div class="box">
-              <h3>Developer Plan</h3>
-              <h4><sup>$</sup>49<span>per month</span></h4>
-              <ul>
-                <li><i class="bx bx-check"></i> Quam adipiscing vitae proin</li>
-                <li><i class="bx bx-check"></i> Nec feugiat nisl pretium</li>
-                <li><i class="bx bx-check"></i> Nulla at volutpat diam uteera</li>
-                <li><i class="bx bx-check"></i> Pharetra massa massa ultricies</li>
-                <li><i class="bx bx-check"></i> Massa ultricies mi quis hendrerit</li>
-              </ul>
-              <a href="#" class="buy-btn">Get Started</a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>End Pricing Section -->
-
-    <!-- ======= Frequently Asked Questions Section ======= -->
-    <!-- <section id="faq" class="faq section-bg">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-            consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit
-            in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse"
-                data-bs-target="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur
-                  gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-2"
-                class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id
-                  donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit
-                  ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3"
-                class="collapsed">Dolor sit amet consectetur adipiscing elit? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum
-                  integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt.
-                  Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi
-                  quis
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4"
-                class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i
-                  class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-4" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc
-                  vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus
-                  gravida quis blandit turpis cursus in.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="500">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-5"
-                class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem
-                dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-5" class="collapse" data-bs-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada
-                  nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis
-                  tellus in metus vulputate eu scelerisque.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </section>End Frequently Asked Questions Section -->
-
-    <!-- ======= Contact Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Feel Free to Contact Us.</p>
-        </div>
-
-        <!-- <div class="row"> -->
-
-          <div class="col d-flex align-items-stretch">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>Madhyapur Thimi 4</p>
-              </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>gyankrishna@gmail.com <br>gyanandcompany4@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>01-5093381<br>+977 9851035589</p>
-              </div>
-
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.4443361084304!2d85.38168447453441!3d27.67265852702222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a6fd92a5c6f%3A0xea10cb4dd3a96b36!2sGyan%20And%20Company!5e0!3m2!1sen!2snp!4v1737102802911!5m2!1sen!2snp"
-                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
-            </div>
-
-          <!-- </div> -->
-
-          <!-- <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
-                  <input type="text" name="name" class="form-control" id="name" required>
+                <!-- Service Card 2 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-shield-check-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Internal Audit</h3>
+                    <p class="text-gray-700 mb-6">
+                        Internal audit is an independent, objective assurance and consulting activity designed to
+                        add value and improve an organization’s processes. We provide periodic internal audit
+                        services, and the scope is tailored to the client's specific needs.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
+                <!-- Service Card 3 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-secure-payment-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Statutory Financial Audits</h3>
+                    <p class="text-gray-700 mb-6">
+                        Our statutory financial audits provide assurance to you and your stakeholders regarding your
+                        company’s financial position. These audits often meet government or industry-specific
+                        requirements, while offering broader benefits to your organization.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div> -->
+                <!-- Service Card 4 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-database-2-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Attestation Services</h3>
+                    <p class="text-gray-700 mb-6">
+                        Gyan & Company offers attestation services, reporting on identified subject matters and
+                        management assertions. We help you focus on specific areas of your organization’s reporting
+                        needs.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-list-3-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Management Consulting</h3>
+                    <p class="text-gray-700 mb-6">
+                        Management consulting involves improving an organization’s performance through the analysis
+                        of current problems and the development of improvement plans. Our consultants provide
+                        expertise in organizational change, technology implementation, strategy development, and
+                        operational improvement.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-funds-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Corporate Tax</h3>
+                    <p class="text-gray-700 mb-6">
+                        We offer comprehensive corporate tax services, from routine compliance to specialized advice
+                        on planning and supporting your business strategies and transactions. We assist in ensuring
+                        tax efficiency throughout your business lifecycle.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 7 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-edit-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Tax Compliance</h3>
+                    <p class="text-gray-700 mb-6">
+                        We help you ensure compliance with the Inland Revenue Department (IRD) of Nepal, using
+                        proven approaches for gathering tax data and submitting tax returns. We also advise on
+                        specialist areas such as R&D tax credits, capital allowances, and managing tax inquiries.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="relative overflow-hidden">
+        <div class="mt-16 text-center py-4">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Firm Information & Licenses</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Card -->
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">ICAN Registered No.</span>
+                        <i class="ri-government-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">2447</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">PAN No.</span>
+                        <i class="ri-profile-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">500056587</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">Municipality No.</span>
+                        <i class="ri-building-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">83/076-77</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">ICAN Membership No.</span>
+                        <i class="ri-shield-user-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">316</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">ICAN C.O.P. No.</span>
+                        <i class="ri-file-certificate-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">Kha 046</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">ICMA Membership No.</span>
+                        <i class="ri-award-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">42710</p>
+                </div>
+
+            </div>
         </div>
 
-      </div>
-    </section><!-- End Contact Section -->
 
-  </main><!-- End #main -->
+        <div class="container mx-auto px-6 py-5">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Left Side - Statistics -->
+                <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                    <div class="fade-in max-w-lg mx-auto lg:mx-0">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                            Our Impact in Numbers
+                        </h2>
+                        <div class="grid grid-cols-2 gap-8 mb-12">
+                            <div class="text-center p-6 bg-white shadow-lg rounded-lg">
+                                <h3 class="text-4xl font-bold text-primary mb-2" id="counter-years">
+                                    10+
+                                </h3>
+                                <p class="text-gray-700">Years of Experience</p>
+                            </div>
+                            <div class="text-center p-6 bg-white shadow-lg rounded-lg">
+                                <h3 class="text-4xl font-bold text-primary mb-2" id="counter-clients">
+                                    200+
+                                </h3>
+                                <p class="text-gray-700">Satisfied Clients</p>
+                            </div>
+                            <div class="text-center p-6 bg-white shadow-lg rounded-lg">
+                                <h3 class="text-4xl font-bold text-primary mb-2" id="counter-projects">
+                                    100+
+                                </h3>
+                                <p class="text-gray-700">Projects Completed</p>
+                            </div>
+                            <div class="text-center p-6 bg-white shadow-lg rounded-lg">
+                                <h3 class="text-4xl font-bold text-primary mb-2" id="counter-team">
+                                    10+
+                                </h3>
+                                <p class="text-gray-700">Team Members</p>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="container footer-bottom clearfix">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Gyan & Company</span></strong>. All Rights Reserved
-      </div>
-    </div>
-  </footer>
+                        m body {
+                            font-family: 'Arial', sans-serif;
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                            padding: 20px;
+                            min-height: 100vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+                        .chart-container {
+                            background: white;
+                            border-radius: 15px;
+                            padding: 30px;
+                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                            max-width: 600px;
+                            width: 100%;
+                        }
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+                        .header {
+                            text-align: center;
+                            margin-bottom: 30px;
+                        }
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+                        .header h1 {
+                            color: #2c3e50;
+                            font-size: 2rem;
+                            margin-bottom: 5px;
+                            font-weight: 600;
+                        }
 
+                        .header p {
+                            color: #7f8c8d;
+                            font-size: 1rem;
+                        }
+
+                        .chart-wrapper {
+                            position: relative;
+                            height: 350px;
+                            margin-bottom: 20px;
+                        }
+
+                        .stats {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 20px;
+                            text-align: center;
+                        }
+
+                        .stat {
+                            padding: 15px;
+                            background: #f8f9fa;
+                            border-radius: 10px;
+                            border-left: 4px solid #667eea;
+                        }
+
+                        .stat h3 {
+                            color: #667eea;
+                            font-size: 1.5rem;
+                            margin-bottom: 5px;
+                        }
+
+                        .stat p {
+                            color: #6c757d;
+                            font-size: 0.9rem;
+                        }
+
+                        @media (max-width: 768px) {
+
+
+                            .chart-container {
+                                padding: 20px;
+                            }
+
+                            .header h1 {
+                                font-size: 1.5rem;
+                            }
+
+                            .chart-wrapper {
+                                height: 250px;
+                            }
+
+                            .stats {
+                                grid-template-columns: 1fr;
+                                gap: 15px;
+                            }
+                        }
+                    </style>
+                    <div class="chart-container">
+                        <div class="header">
+                            <h1>Business Growth</h1>
+                            <p>Demonstrating Our Potential & Success</p>
+                        </div>
+
+                        <div class="chart-wrapper">
+                            <canvas id="growthChart"></canvas>
+                        </div>
+
+                        <div class="stats">
+                            <div class="stat">
+                                <h3>NPR 52L</h3>
+                                <p>Annual Revenue</p>
+                            </div>
+                            <div class="stat">
+                                <h3>250+</h3>
+                                <p>Clients Served</p>
+                            </div>
+                            <div class="stat">
+                                <h3>35%</h3>
+                                <p>Growth Rate</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        const ctx = document.getElementById('growthChart').getContext('2d');
+
+                        new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                                datasets: [{
+                                    label: 'Revenue (NPR)',
+                                    data: [2800000, 3500000, 4200000, 4800000, 5200000, 6000000],
+                                    borderColor: '#667eea',
+                                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                                    borderWidth: 3,
+                                    fill: true,
+                                    tension: 0.4,
+                                    pointBackgroundColor: '#667eea',
+                                    pointBorderColor: '#fff',
+                                    pointBorderWidth: 2,
+                                    pointRadius: 6
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        grid: {
+                                            color: 'rgba(0, 0, 0, 0.05)'
+                                        },
+                                        ticks: {
+                                            callback: function (value) {
+                                                return 'NPR ' + (value / 1000000).toFixed(1) + 'M';
+                                            },
+                                            color: '#6c757d'
+                                        }
+                                    },
+                                    x: {
+                                        grid: {
+                                            display: false
+                                        },
+                                        ticks: {
+                                            color: '#6c757d'
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+
+                </div>
+                <!-- stats code -->
+
+
+
+
+
+                <!-- Right Side - Company Story -->
+                <div class="w-full lg:w-1/2 lg:pl-16">
+                    <div class="fade-in max-w-lg mx-auto lg:mx-0">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                            Our Story
+                        </h2>
+                        <p class="text-gray-700 mb-6">
+                            Gyan and Company is a renowned audit firm in Nepal, established on 15 August 1996 (2053
+                            Shrawan 31). Initially, the firm was named G.K. Shrestha & Company and was registered with
+                            the Office of the Auditor General. In 1997, under the Chartered Accountants Act, the firm
+                            was re-registered as Gyan and Company with the Institute of Chartered Accountants of Nepal
+                            (ICAN).
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            The principal proprietor of the firm, Mr. Gyan Krishna Shrestha, is a Registered Auditor
+                            with a B-class auditor license. He also holds an auditing license from the Institute of
+                            Certified Management Accountants (ICMA) as a Certified Management Accountant (CMA).
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="bg-white shadow-md rounded-lg p-4 flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-award-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">
+                                        CMA Certified
+                                    </h4>
+                                    <p class="text-sm text-gray-700">Auditing Standards</p>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-lg p-4 flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-verified-badge-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">
+                                        National Audit Certified
+                                    </h4>
+                                    <p class="text-sm text-gray-700">Auditing Standards</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section id="licenses" class="py-24 bg-gray-50 relative overflow-hidden">
+                            <div class="container mx-auto px-6">
+                                <div class="text-center mb-16">
+                                    <h2 class="fade-in text-3xl md:text-4xl font-bold text-gradient mb-4">
+                                        Licenses & Certifications
+                                    </h2>
+                                </div>
+
+                                <!-- Accordion Container -->
+                                <div class="max-w-4xl mx-auto space-y-4">
+                                    <!-- National Audit License Accordion Item -->
+                                    <div class="accordion-item bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <button
+                                            class="accordion-header w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center space-x-4">
+                                                <i class="ri-government-line ri-xl text-primary"></i>
+                                                <h3 class="text-xl font-semibold text-gray-900">
+                                                    National Audit License
+                                                </h3>
+                                            </div>
+                                            <i
+                                                class="ri-arrow-down-s-line text-primary text-xl transition-transform"></i>
+                                        </button>
+                                        <div
+                                            class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                                            <div class="px-6 pb-6 pt-2">
+                                                <p class="text-gray-700">
+                                                    The firm holds a national audit license from ICAN, Satdobato,
+                                                    Lalitpur,
+                                                    demonstrating our compliance with the highest national auditing
+                                                    standards.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- International Recognition Accordion Item -->
+                                    <div class="accordion-item bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <button
+                                            class="accordion-header w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center space-x-4">
+                                                <i class="ri-global-line ri-xl text-primary"></i>
+                                                <h3 class="text-xl font-semibold text-gray-900">
+                                                    International Recognition
+                                                </h3>
+                                            </div>
+                                            <i
+                                                class="ri-arrow-down-s-line text-primary text-xl transition-transform"></i>
+                                        </button>
+                                        <div
+                                            class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                                            <div class="px-6 pb-6 pt-2">
+                                                <p class="text-gray-700">
+                                                    Certified Management Accountants (CMA) recognized in 170+ countries.
+                                                    Mr. Gyan Krishna Shrestha has championed CMA qualifications in Nepal
+                                                    since 2000, enhancing global financial practices locally.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CMA Certification Accordion Item -->
+                                    <div class="accordion-item bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <button
+                                            class="accordion-header w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center space-x-4">
+                                                <i class="ri-pass-valid-line ri-xl text-primary"></i>
+                                                <h3 class="text-xl font-semibold text-gray-900">
+                                                    About CMA Certification
+                                                </h3>
+                                            </div>
+                                            <i
+                                                class="ri-arrow-down-s-line text-primary text-xl transition-transform"></i>
+                                        </button>
+                                        <div
+                                            class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                                            <div class="px-6 pb-6 pt-2">
+                                                <p class="text-gray-700">
+                                                    Offered by Australia's Institute of Certified Management
+                                                    Accountants,
+                                                    CMA focuses on strategic financial management and value creation.
+                                                    CMAs excel in data analytics, governance, strategic auditing,
+                                                    and global financial leadership across 170+ countries.
+                                                </p>
+                                                <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                                                    <p class="text-sm text-gray-600">CMA professionals are:</p>
+                                                    <ul class="list-disc pl-4 mt-2 text-gray-700">
+                                                        <li>Strategic business partners</li>
+                                                        <li>Data-driven decision makers</li>
+                                                        <li>Global financial leaders</li>
+                                                        <li>Governance experts</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <style>
+                            .accordion-content {
+                                transition: max-height 0.3s ease-out, opacity 0.2s ease;
+                            }
+
+                            .accordion-item.active .accordion-content {
+                                max-height: 500px;
+                                /* Adjust based on content size */
+                                opacity: 1;
+                            }
+
+                            .accordion-item.active .ri-arrow-down-s-line {
+                                transform: rotate(180deg);
+                            }
+                        </style>
+
+                        <script>
+                            document.querySelectorAll('.accordion-header').forEach(button => {
+                                button.addEventListener('click', () => {
+                                    const accordionItem = button.closest('.accordion-item');
+                                    const content = accordionItem.querySelector('.accordion-content');
+
+                                    // Toggle active class
+                                    accordionItem.classList.toggle('active');
+
+                                    // Close other accordion items
+                                    document.querySelectorAll('.accordion-item').forEach(item => {
+                                        if (item !== accordionItem) {
+                                            item.classList.remove('active');
+                                            item.querySelector('.accordion-content').style.maxHeight = '0';
+                                        }
+                                    });
+
+                                    // Toggle max-height
+                                    if (content.style.maxHeight) {
+                                        content.style.maxHeight = null;
+                                    } else {
+                                        content.style.maxHeight = content.scrollHeight + "px";
+                                    }
+                                });
+                            });
+                        </script>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="case-studies" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Satisfied Clients</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    These are just a few of our satisfied clients.
+                </p>
+            </div>
+            <!-- Tailwind Utilities -->
+            <script src="https://cdn.tailwindcss.com"></script>
+            <style>
+                .no-scrollbar::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .no-scrollbar {
+                    -ms-overflow-style: none;
+                    scrollbar-width: none;
+                }
+            </style>
+
+            <!-- 🎓 Carousel Section Start -->
+            <section class="relative w-full">
+                <!-- Left Button -->
+                <button id="leftBtn"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-md rounded-full p-2">
+                    ◀
+                </button>
+
+                <!-- Scrollable Card Container -->
+                <div id="carousel" class="flex overflow-x-auto no-scrollbar space-x-6 scroll-smooth pb-4 px-4 sm:px-10">
+                    <!-- Cards will be injected by JS -->
+                </div>
+
+                <!-- Right Button -->
+                <button id="rightBtn"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-md rounded-full p-2">
+                    ▶
+                </button>
+            </section>
+            <!-- 🎓 Carousel Section End -->
+
+            <script>
+                const carousel = document.getElementById("carousel");
+                const leftBtn = document.getElementById("leftBtn");
+                const rightBtn = document.getElementById("rightBtn");
+
+                let scrollSpeed = 0.5; // pixels per frame
+                let paused = false;
+
+                leftBtn.addEventListener("click", () => {
+                    carousel.scrollBy({ left: -300, behavior: "smooth" });
+                });
+
+                rightBtn.addEventListener("click", () => {
+                    carousel.scrollBy({ left: 300, behavior: "smooth" });
+                });
+
+                carousel.addEventListener("mouseenter", () => paused = true);
+                carousel.addEventListener("mouseleave", () => paused = false);
+
+                fetch('data.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        const fullData = [...data, ...data]; // Duplicate for loop effect
+
+                        fullData.forEach(firm => {
+                            const card = document.createElement('div');
+                            card.className = `
+          bg-white/90 backdrop-blur-md rounded-2xl shadow-xl border border-gray-200 p-6 min-w-[280px] sm:min-w-[320px]
+          transition-transform hover:-translate-y-2 hover:shadow-2xl duration-300 ease-in-out flex-shrink-0
+        `;
+                            card.innerHTML = `
+          <div class="text-indigo-600 font-bold text-sm mb-2">#${firm["S.N."]}</div>
+          <h2 class="text-lg font-semibold text-gray-800 mb-2">${firm["Name of Firm"]}</h2>
+          <p class="text-sm text-gray-700"><span class="font-medium text-gray-900">Type:</span> ${firm["Type"]}</p>
+          <p class="text-sm text-gray-700"><span class="font-medium text-gray-900">Address:</span> ${firm["Address"]}</p>
+        `;
+                            carousel.appendChild(card);
+                        });
+
+                        // Animate continuously
+                        function animate() {
+                            if (!paused) {
+                                carousel.scrollLeft += scrollSpeed;
+                                if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+                                    carousel.scrollLeft = 0;
+                                }
+                            }
+                            requestAnimationFrame(animate);
+                        }
+
+                        requestAnimationFrame(animate);
+                    });
+            </script>
+
+        </div>
+    </section>
+
+    <!-- Team Section -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 1.5rem;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 2rem;
+                height: 2rem;
+                background-size: 1rem;
+            }
+
+            .col-10 {
+                width: 100% !important;
+            }
+        }
+
+        .card {
+            border: none;
+            border-radius: 1rem;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+    </style>
+    <!-- Team Section -->
+    <section id="team" class="py-10 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="fade-in text-3xl md:text-4xl font-bold text-gradient mb-4">
+                    Meet Our Leadership Team
+                </h2>
+                <p class="fade-in text-xl text-gray-700 max-w-3xl mx-auto">
+                    Our team of experienced professionals brings diverse expertise to
+                    deliver exceptional auditing services.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="relative h-80">
+                    <div class="team-card w-full h-full pulse-soft">
+                        <div class="team-front bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./assets/img/gyan.jpg" alt="Gyan Krishna"
+                                class="w-full h-48 object-cover object-top" />
+                            <div class="p-4 text-center">
+                                <h3 class="text-xl font-semibold text-gray-900">
+                                    Gyan Krishna Shrestha
+                                </h3>
+                                <p class="text-primary">Certified Management Accountant (CMA)</p>
+                                <p class="text-primary">Registered Auditor (RA)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="relative h-80">
+                    <div class="team-card w-full h-full pulse-soft">
+                        <div class="team-front bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./assets/img/shres.jpg" alt="Subin Bajracharya"
+                                class="w-full h-48 object-cover object-top" />
+                            <div class="p-4 text-center">
+                                <h3 class="text-xl font-semibold text-gray-900">
+                                    Subin Bajracharya
+                                </h3>
+                                <p class="text-primary">Audit Assistant
+                                </p>
+                                <!-- <p class="text-primary">Detail-oriented Audit Assistant ensuring accuracy and compliance in audits.</p> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="relative h-80">
+                    <div class="team-card w-full h-full pulse-soft">
+                        <div class="team-front bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./assets/img/pokheral.jpg" alt="Salina Pokhrel"
+                                class="w-full h-48 object-cover object-top" />
+                            <div class="p-4 text-center">
+                                <h3 class="text-xl font-semibold text-gray-900">
+                                    Salina Pokhrel
+                                </h3>
+                                <p class="text-primary">Audit Assistant</p>
+                                <!-- <p class="text-primary">Supporting audit teams with meticulous financial review and analysis.</p> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Team member  4 -->
+                <div class="relative h-80">
+                    <div class="team-card w-full h-full pulse-soft">
+                        <div class="team-front bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./assets/img/asd1.jpeg" alt="Salina Pokhrel"
+                                class="w-full h-48 object-cover object-top" />
+                            <div class="p-4 text-center">
+                                <h3 class="text-xl font-semibold text-gray-900">
+                                    Nujan Shrestha
+                                </h3>
+                                <p class="text-primary">IT Head</p>
+                                <!-- <p class="text-primary">Supporting audit teams with meticulous financial review and analysis.</p> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="fade-in text-3xl md:text-4xl font-bold text-gradient mb-4">
+                    Get in Touch
+                </h2>
+                <p class="fade-in text-xl text-gray-700 max-w-3xl mx-auto">
+                    Ready to elevate your auditing processes? Contact us today to
+                    schedule a consultation with our experts.
+                </p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Form -->
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                            Send Us a Message
+                        </h3>
+                        <form id="contact-form">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name"
+                                    class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                    placeholder="Your name" />
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email"
+                                    class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                    placeholder="your.email@company.com" />
+                            </div>
+                            <div class="mb-6">
+                                <label for="company" class="block text-gray-700 mb-2">Company</label>
+                                <input type="text" id="company"
+                                    class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                    placeholder="Your company name" />
+                            </div>
+                            <div class="mb-6">
+                                <label for="service" class="block text-gray-700 mb-2">Service of Interest</label>
+                                <div class="relative">
+                                    <select id="service"
+                                        class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all appearance-none pr-8">
+                                        <option value="" selected disabled>
+                                            Select a service
+                                        </option>
+                                        <option value="financial">Financial Auditing</option>
+                                        <option value="compliance">Compliance Auditing</option>
+                                        <option value="internal">Internal Auditing</option>
+                                        <option value="it">IT Auditing</option>
+                                        <option value="tax">Tax Auditing</option>
+                                        <option value="forensic">Forensic Auditing</option>
+                                    </select>
+                                    <div
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                        <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-8">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="5"
+                                    class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                    placeholder="Tell us about your auditing needs..."></textarea>
+                            </div>
+                            <button type="submit"
+                                class="cta-button w-full bg-primary text-white px-6 py-3 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Map and Contact Info -->
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                        <div class="h-64 relative">
+                            <div class="absolute inset-0 bg-cover bg-center">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.4402930888346!2d85.38425939999999!3d27.672653799999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a6fd92a5c6f%3A0xea10cb4dd3a96b36!2sGyan%20And%20Company!5e1!3m2!1sen!2snp!4v1745481227290!5m2!1sen!2snp"
+                                    width=90% height=90% style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-grow">
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                                Contact Information
+                            </h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-map-pin-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">
+                                            Location
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            Madhyapur Thimi, Bhaktapur<br />
+                                            Nepal
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-phone-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Phone</h4>
+                                        <p class="text-gray-700">
+                                            (+977) 01-5093381 <br />
+                                            (+977) 9851035589 <br />
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-mail-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Email</h4>
+                                        <p class="text-gray-700">
+                                            contact@gyanandco.com.np<br />
+                                            gyankrishna@gmail.com <br />
+                                            gyanandcompany4@gmail.com
+                                        </p>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-time-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Hours</h4>
+                                        <p class="text-gray-700">
+                                            Sunday - Friday: 9:00 AM - 6:00 PM<br />
+                                            Saturday : Closed
+                                        </p>
+                                    </div>
+                                </div>
+                                <img src="./assets/img/gyanandco_logo.png" class=" w-1/2 h-auto object-contain">
+                                <!-- <div class="container text-center">
+                                    <a class="cta-btn align-middle" href="#">Call to schedule a meeting</a>
+                                    <img class="container" src="styled_vcard_qr.png" height='20px' width="50px">
+                                  </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <h1 class="text-3xl font-['Pacifico'] text-white mb-6"><img src="./assets/img/logo_gyans.png"></h1>
+                    <p class="text-gray-400 mb-6">
+                        Delivering precision and excellence in auditing services since
+                        2005. Your trusted partner for financial integrity and compliance.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#"
+                            class="social-icon w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+                            <i class="ri-linkedin-fill text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+                            <i class="ri-twitter-fill text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+                            <i class="ri-facebook-fill text-white"></i>
+                        </a>
+                        <a href="#"
+                            class="social-icon w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+                            <i class="ri-instagram-fill text-white"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#case-studies" class="text-gray-400 hover:text-white transition-colors">Case
+                                Studies</a>
+                        </li>
+                        <li>
+                            <a href="#team" class="text-gray-400 hover:text-white transition-colors">Our Team</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Financial Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Compliance Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Internal Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">IT Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Tax Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Forensic Auditing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 Gyan & Company. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed bottom-8 right-8 w-12 h-12 bg-primary rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-all hover:scale-110"
+                id="scroll-to-top">
+                <i class="ri-arrow-up-line text-white"></i>
+            </div>
+    </footer>
+
+    <!-- External Resources -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+
+    <!-- Main Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Scroll to top
+        document.getElementById('scroll-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.closest('.accordion-item');
+                item.classList.toggle('active');
+                const content = item.querySelector('.accordion-content');
+                content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + "px";
+            });
+        });
+
+
+        // 3D Particle Background
+        document.addEventListener("DOMContentLoaded", () => {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById("hero-scene").appendChild(renderer.domElement);
+
+            // Create particles
+            const particlesCount = 2000;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particlesCount * 3);
+
+            for (let i = 0; i < particlesCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 10;
+                positions[i + 1] = (Math.random() - 0.5) * 10;
+                positions[i + 2] = (Math.random() - 0.5) * 10;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const material = new THREE.PointsMaterial({
+                size: 0.02,
+                color: 0x0055a4,
+                transparent: true,
+                opacity: 0.8
+            });
+            const points = new THREE.Points(geometry, material);
+            scene.add(points);
+
+            // Interactive particle movement
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                mouseY = (event.clientY / window.innerHeight) * 2 - 1;
+            });
+
+            function animateParticles() {
+                requestAnimationFrame(animateParticles);
+                points.rotation.x += mouseY * 0.01;
+                points.rotation.y += mouseX * 0.01;
+                renderer.render(scene, camera);
+            }
+            animateParticles();
+
+            // Responsive renderer
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        });
+
+        // 3D Globe
+        document.addEventListener("DOMContentLoaded", () => {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+            camera.position.z = 2;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(300, 300);
+            document.getElementById("globe").appendChild(renderer.domElement);
+
+            // Create globe
+            const geometry = new THREE.SphereGeometry(1, 64, 64);
+            const texture = new THREE.TextureLoader().load('https://threejsfundamentals.org/threejs/resources/images/earth-day.jpg');
+            const material = new THREE.MeshBasicMaterial({ map: texture });
+            const globe = new THREE.Mesh(geometry, material);
+            scene.add(globe);
+
+            function animateGlobe() {
+                requestAnimationFrame(animateGlobe);
+                globe.rotation.y += 0.002;
+                renderer.render(scene, camera);
+            }
+            animateGlobe();
+
+            window.addEventListener('resize', () => {
+                const width = Math.min(300, document.getElementById("globe").offsetWidth);
+                renderer.setSize(width, width);
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Thank you for your message! We'll get back to you soon.");
+            document.getElementById('contact-form').reset();
+        });
+    </script>
 </body>
 
 </html>
