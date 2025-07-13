@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrecisionAudit - Professional Auditing Services</title>
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0055a4",
+                        secondary: "#00a8e8",
+                        dark: "#1a1a1a"
+                    },
+                    fontFamily: {
+                        sans: ['"SF Pro Display"', 'sans-serif']
+                    }
+                },
+            },
+        };
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Essential Meta Tags -->
+    <title>Gyan & Company | Chartered Accountants in Nepal | Audit, Tax & Leadership Team</title>
+    <meta name="description"
+        content="Gyan & Company is a registered firm of Chartered Accountants in Nepal offering expert statutory audits, tax services, and advisory solutions. Meet our certified leadership and audit team.">
+    <meta name="keywords"
+        content="Chartered Accountants Nepal, Audit Firm Nepal, Tax Advisory Nepal, Statutory Audit, Internal Audit, Management Consulting, PAN Registration, ICAN Registered, Gyan and Company, Gyan & Co, Auditors Nepal, Audit Team Nepal, Certified Management Accountant Nepal">
+    <meta name="author" content="Gyan & Company">
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="Gyan & Company | Chartered Accountants in Nepal">
+    <meta property="og:description"
+        content="Trusted Chartered Accountants offering audits, tax compliance, and consultancy in Nepal. Meet our expert audit and leadership team.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gyanandco.com.np">
+    <meta property="og:image" content="https://gyanandco.com.np/images/gyanandco-banner.jpg">
+
+    <!-- Viewport for Mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Structured Data: Leadership Team (JSON-LD format for SEO-rich snippets) -->
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Gyan & Company",
+  "url": "https://gyanandco.com.np",
+  "logo": "https://gyanandco.com.np/images/gyanandco-banner.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "NP"
+  },
+  "employee": [
+    {
+      "@type": "Person",
+      "name": "Gyan Krishna Shrestha",
+      "jobTitle": "Certified Management Accountant (CMA), Registered Auditor (RA)",
+      "image": "https://gyanandco.com.np/assets/img/gyan.jpg"
+    },
+    {
+      "@type": "Person",
+      "name": "Subin Bajracharya",
+      "jobTitle": "Audit Assistant",
+      "image": "https://gyanandco.com.np/assets/img/shres.jpg"
+    },
+    {
+      "@type": "Person",
+      "name": "Salina Pokhrel",
+      "jobTitle": "Audit Assistant",
+      "image": "https://gyanandco.com.np/assets/img/pokheral.jpg"
+    },
+    {
+      "@type": "Person",
+      "name": "Nujan Shrestha",
+      "jobTitle": "IT Head",
+      "image": "https://gyanandco.com.np/assets/img/asd1.jpeg"
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/gyanandco",  // Replace or remove if not used
+    "https://gyanandco.com.np"
+  ]
+}
+</script>
+
+    <!-- Custom Styles -->
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(249, 250, 251, 0.95) 100%);
+        }
+
+        .hover-lift {
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+        }
+
+        .parallax-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        .parallax-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 85, 164, 0.25);
+        }
+
+        .text-gradient {
+            background: linear-gradient(120deg, #0055a4, #00a8e8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .webgl-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .card-reveal {
+            perspective: 1000px;
+        }
+
+        .card-face {
+            backface-visibility: hidden;
+            transition: transform 0.6s;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .card-front {
+            transform: rotateY(0deg);
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-20px);
+            }
+
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .team-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .pulse-soft {
+            animation: pulse-soft 2s infinite;
+        }
+
+        @keyframes pulse-soft {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+    <!-- Navigation -->
+    <nav
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <img src="./assets/img/logo_gyans.png" alt="Logo" class="h-10 w-full rounded-full object-cover">
+
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="nav-link text-gray-700 hover:text-primary transition-colors">About</a>
+                <a href="#services" class="nav-link text-gray-700 hover:text-primary transition-colors">Services</a>
+                <a href="#case-studies" class="nav-link text-gray-700 hover:text-primary transition-colors">Clients</a>
+                <a href="#team" class="nav-link text-gray-700 hover:text-primary transition-colors">Our Team</a>
+            </div>
+            <a href="#contact"
+                class="hidden md:block bg-primary text-white px-6 py-2 rounded-lg shadow-lg hover:shadow-xl transition-all">Contact
+                Us</a>
+            <button id="mobile-menu-button" class="md:hidden">
+                <i class="ri-menu-line ri-xl text-gray-700"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-md shadow-lg absolute w-full">
+            <div class="container mx-auto px-6 py-4 flex flex-col space-y-4">
+                <a href="#about" class="text-gray-700 hover:text-primary transition-colors">About Us</a>
+                <a href="#services" class="text-gray-700 hover:text-primary transition-colors">Services</a>
+                <a href="#case-studies" class="text-gray-700 hover:text-primary transition-colors">Case Studies</a>
+                <a href="#team" class="text-gray-700 hover:text-primary transition-colors">Our Team</a>
+                <a href="#contact"
+                    class="bg-primary text-white px-6 py-2 rounded-lg text-center shadow-lg hover:shadow-xl transition-all">Contact
+                    Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- 3D Background -->
+        <div id="hero-scene" class="webgl-background"></div>
+
+        <!-- Hero Content -->
+        <div class="container mx-auto px-6 py-24 relative z-10">
+            <div class="flex flex-col items-center text-center mb-16">
+                <div class="mb-8 floating">
+                    <div class="w-full h-20 mb-6">
+                        <img src="./assets/img/logo_gyans.png" alt="Logo" class="w-full h-full ">
+                    </div>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                    Precision Auditing for <span class="text-gradient">Modern Business</span>
+                </h1>
+                <p class="text-xl text-gray-700 mb-10 max-w-2xl">
+                    Delivering comprehensive auditing solutions with cutting-edge technology and decades of industry
+                    expertise.
+                </p>
+                <a href="#contact"
+                    class="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:shadow-xl transition-all">
+                    Schedule a Consultation
+                </a>
+            </div>
+            <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-primary scroll-indicator">
+                <i class="ri-arrow-down-s-line ri-2x animate-bounce"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Comprehensive Services</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    Since its establishment, Gyan and Company has offered various services including statutory
+                    audits, tax audits, internal audits, cost audits, management audits, audit reviews, consultancy
+                    services, and more.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-line-chart-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Statutory Independent Audit</h3>
+                    <p class="text-gray-700 mb-6">
+                        An external or statutory audit is an independent examination of the financial statements
+                        prepared by an organization. Our experienced team provides statutory audit services in
+                        compliance with the prevailing laws, rules, and regulations. We have experience conducting
+                        audits for proprietorships, partnerships, companies, and corporate houses.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-shield-check-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Internal Audit</h3>
+                    <p class="text-gray-700 mb-6">
+                        Internal audit is an independent, objective assurance and consulting activity designed to
+                        add value and improve an organization’s processes. We provide periodic internal audit
+                        services, and the scope is tailored to the client's specific needs.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-secure-payment-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Statutory Financial Audits</h3>
+                    <p class="text-gray-700 mb-6">
+                        Our statutory financial audits provide assurance to you and your stakeholders regarding your
+                        company’s financial position. These audits often meet government or industry-specific
+                        requirements, while offering broader benefits to your organization.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-database-2-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Attestation Services</h3>
+                    <p class="text-gray-700 mb-6">
+                        Gyan & Company offers attestation services, reporting on identified subject matters and
+                        management assertions. We help you focus on specific areas of your organization’s reporting
+                        needs.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-list-3-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Management Consulting</h3>
+                    <p class="text-gray-700 mb-6">
+                        Management consulting involves improving an organization’s performance through the analysis
+                        of current problems and the development of improvement plans. Our consultants provide
+                        expertise in organizational change, technology implementation, strategy development, and
+                        operational improvement.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-funds-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Corporate Tax</h3>
+                    <p class="text-gray-700 mb-6">
+                        We offer comprehensive corporate tax services, from routine compliance to specialized advice
+                        on planning and supporting your business strategies and transactions. We assist in ensuring
+                        tax efficiency throughout your business lifecycle.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 7 -->
+                <div class="parallax-card bg-white rounded-lg shadow-lg p-8 hover-lift hover:shadow-xl">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="ri-file-edit-line ri-xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-4">Tax Compliance</h3>
+                    <p class="text-gray-700 mb-6">
+                        We help you ensure compliance with the Inland Revenue Department (IRD) of Nepal, using
+                        proven approaches for gathering tax data and submitting tax returns. We also advise on
+                        specialist areas such as R&D tax credits, capital allowances, and managing tax inquiries.
+                    </p>
+                    <a href="#contact" class="text-primary font-medium flex items-center">
+                        Learn More <i class="ri-arrow-right-line ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="relative overflow-hidden">
+        <div class="mt-16 text-center py-4">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">Firm Information & Licenses</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+                <!-- Card -->
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">ICAN Registered No.</span>
+                        <i class="ri-government-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">2447</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">PAN No.</span>
+                        <i class="ri-profile-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">500056587</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">Municipality No.</span>
+                        <i class="ri-building-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">83/076-77</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">ICAN Membership No.</span>
+                        <i class="ri-shield-user-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">316</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">ICAN C.O.P. No.</span>
+                        <i class="ri-file-certificate-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">Kha 042</p>
+                </div>
+
+                <div class="bg-white border border-gray-200 shadow-sm rounded-xl p-6 hover:shadow-md transition-all">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm text-gray-500">ICMA Membership No.</span>
+                        <i class="ri-award-line text-primary text-lg"></i>
+                    </div>
+                    <p class="text-xl font-semibold text-gray-800">42710</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container mx-auto px-6 py-5">
+            <div class="flex flex-col lg:flex-row items-center">
+                <!-- Left Side - Statistics -->
+                <div class="w-full lg:w-1/2 mb-12 lg:mb-0">
+                    <div class="fade-in max-w-lg mx-auto lg:mx-0">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+                            Our Impact in Numbers
+                        </h2>
+                        <div class="grid grid-cols-2 gap-8 mb-12">
+                            <div class="text-center p-6 bg-white shadow-lg rounded-lg">
+                                <h3 class="text-4xl font-bold text-primary mb-2" id="counter-years">
+                                    28+
+                                </h3>
+                                <p class="text-gray-700">Years of Experience</p>
+                            </div>
+                            <div class="text-center p-6 bg-white shadow-lg rounded-lg">
+                                <h3 class="text-4xl font-bold text-primary mb-2" id="counter-clients">
+                                    200+
+                                </h3>
+                                <p class="text-gray-700">Satisfied Clients</p>
+                            </div>
+                            <div class="text-center p-6 bg-white shadow-lg rounded-lg">
+                                <h3 class="text-4xl font-bold text-primary mb-2" id="counter-projects">
+                                    100+
+                                </h3>
+                                <p class="text-gray-700">Projects Completed</p>
+                            </div>
+                            <div class="text-center p-6 bg-white shadow-lg rounded-lg">
+                                <h3 class="text-4xl font-bold text-primary mb-2" id="counter-team">
+                                    10+
+                                </h3>
+                                <p class="text-gray-700">Team Members</p>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                        * {
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                        }
+
+                        m body {
+                            font-family: 'Arial', sans-serif;
+                            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                            padding: 20px;
+                            min-height: 100vh;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .chart-container {
+                            background: white;
+                            border-radius: 15px;
+                            padding: 30px;
+                            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                            max-width: 600px;
+                            width: 100%;
+                        }
+
+                        .header {
+                            text-align: center;
+                            margin-bottom: 30px;
+                        }
+
+                        .header h1 {
+                            color: #2c3e50;
+                            font-size: 2rem;
+                            margin-bottom: 5px;
+                            font-weight: 600;
+                        }
+
+                        .header p {
+                            color: #7f8c8d;
+                            font-size: 1rem;
+                        }
+
+                        .chart-wrapper {
+                            position: relative;
+                            height: 350px;
+                            margin-bottom: 20px;
+                        }
+
+                        .stats {
+                            display: grid;
+                            grid-template-columns: repeat(3, 1fr);
+                            gap: 20px;
+                            text-align: center;
+                        }
+
+                        .stat {
+                            padding: 15px;
+                            background: #f8f9fa;
+                            border-radius: 10px;
+                            border-left: 4px solid #667eea;
+                        }
+
+                        .stat h3 {
+                            color: #667eea;
+                            font-size: 1.5rem;
+                            margin-bottom: 5px;
+                        }
+
+                        .stat p {
+                            color: #6c757d;
+                            font-size: 0.9rem;
+                        }
+
+                        @media (max-width: 768px) {
+
+
+                            .chart-container {
+                                padding: 20px;
+                            }
+
+                            .header h1 {
+                                font-size: 1.5rem;
+                            }
+
+                            .chart-wrapper {
+                                height: 250px;
+                            }
+
+                            .stats {
+                                grid-template-columns: 1fr;
+                                gap: 15px;
+                            }
+                        }
+                    </style>
+                    <div class="chart-container">
+                        <div class="max-w-xl mx-auto">
+                            <ol class="relative border-l border-primary">
+                                <li class="mb-10 ml-6">
+                                    <span class="absolute w-4 h-4 bg-primary rounded-full -left-2"></span>
+                                    <h3 class="font-semibold text-gray-900">1. Initial Consultation</h3>
+                                    <p class="text-sm text-gray-600">Understanding your business and audit requirements.
+                                    </p>
+                                </li>
+                                <li class="mb-10 ml-6">
+                                    <span class="absolute w-4 h-4 bg-primary rounded-full -left-2"></span>
+                                    <h3 class="font-semibold text-gray-900">2. Engagement Letter</h3>
+                                    <p class="text-sm text-gray-600">Formal agreement and planning outline.</p>
+                                </li>
+                                <li class="mb-10 ml-6">
+                                    <span class="absolute w-4 h-4 bg-primary rounded-full -left-2"></span>
+                                    <h3 class="font-semibold text-gray-900">3. Field Work</h3>
+                                    <p class="text-sm text-gray-600">In-depth financial analysis and verification.</p>
+                                </li>
+                                <li class="ml-6">
+                                    <span class="absolute w-4 h-4 bg-primary rounded-full -left-2"></span>
+                                    <h3 class="font-semibold text-gray-900">4. Reporting & Recommendations</h3>
+                                    <p class="text-sm text-gray-600">Detailed reports with expert recommendations.</p>
+                                </li>
+                            </ol>
+                        </div>
+
+                    </div>
+
+                    <script>
+                        const ctx = document.getElementById('growthChart').getContext('2d');
+
+                        new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: ['2020', '2021', '2022', '2023', '2024', '2025'],
+                                datasets: [{
+                                    label: 'Revenue (NPR)',
+                                    data: [2800000, 3500000, 4200000, 4800000, 5200000, 6000000],
+                                    borderColor: '#667eea',
+                                    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                                    borderWidth: 3,
+                                    fill: true,
+                                    tension: 0.4,
+                                    pointBackgroundColor: '#667eea',
+                                    pointBorderColor: '#fff',
+                                    pointBorderWidth: 2,
+                                    pointRadius: 6
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                maintainAspectRatio: false,
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    }
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        grid: {
+                                            color: 'rgba(0, 0, 0, 0.05)'
+                                        },
+                                        ticks: {
+                                            callback: function (value) {
+                                                return 'NPR ' + (value / 1000000).toFixed(1) + 'M';
+                                            },
+                                            color: '#6c757d'
+                                        }
+                                    },
+                                    x: {
+                                        grid: {
+                                            display: false
+                                        },
+                                        ticks: {
+                                            color: '#6c757d'
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+
+                </div>
+                <!-- stats code -->
+
+
+
+
+
+                <!-- Right Side - Company Story -->
+                <div class="w-full lg:w-1/2 lg:pl-16">
+                    <div class="fade-in max-w-lg mx-auto lg:mx-0">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                            Our Story
+                        </h2>
+                        <p class="text-gray-700 mb-6">
+                            Gyan and Company is a renowned audit firm in Nepal, established on 15 August 1996 (2053
+                            Shrawan 31). Initially, the firm was named G.K. Shrestha & Company and was registered with
+                            the Office of the Auditor General. In 1997, under the Chartered Accountants Act, the firm
+                            was re-registered as Gyan and Company with the Institute of Chartered Accountants of Nepal
+                            (ICAN).
+                        </p>
+                        <p class="text-gray-700 mb-6">
+                            The principal proprietor of the firm, Mr. Gyan Krishna Shrestha, is a Registered Auditor
+                            with a B-class auditor license. He also holds an auditing license from the Institute of
+                            Certified Management Accountants (ICMA) as a Certified Management Accountant (CMA).
+                        </p>
+                        <div class="flex flex-wrap gap-4">
+                            <div class="bg-white shadow-md rounded-lg p-4 flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-award-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">
+                                        CMA Certified
+                                    </h4>
+                                    <p class="text-sm text-gray-700">Auditing Standards</p>
+                                </div>
+                            </div>
+                            <div class="bg-white shadow-md rounded-lg p-4 flex items-center">
+                                <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="ri-verified-badge-line ri-lg text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">
+                                        National Audit Certified
+                                    </h4>
+                                    <p class="text-sm text-gray-700">Auditing Standards</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <section id="licenses" class="py-24 bg-gray-50 relative overflow-hidden">
+                            <div class="container mx-auto px-6">
+                                <div class="text-center mb-16">
+                                    <h2 class="fade-in text-3xl md:text-4xl font-bold text-gradient mb-4">
+                                        Licenses & Certifications
+                                    </h2>
+                                </div>
+
+                                <!-- Accordion Container -->
+                                <div class="max-w-4xl mx-auto space-y-4">
+                                    <!-- National Audit License Accordion Item -->
+                                    <div class="accordion-item bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <button
+                                            class="accordion-header w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center space-x-4">
+                                                <i class="ri-global-line ri-xl text-primary"></i>
+                                                <h3 class="text-xl font-semibold text-gray-900">
+                                                    National Audit License
+                                                </h3>
+                                            </div>
+                                            <i
+                                                class="ri-arrow-down-s-line text-primary text-xl transition-transform"></i>
+                                        </button>
+                                        <div
+                                            class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                                            <div class="px-6 pb-6 pt-2">
+                                                <p class="text-gray-700">
+                                                    The firm holds a national audit license from ICAN, Satdobato,
+                                                    Lalitpur,
+                                                    demonstrating our compliance with the highest national auditing
+                                                    standards.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- International Recognition Accordion Item -->
+                                    <div class="accordion-item bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <button
+                                            class="accordion-header w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center space-x-4">
+                                                <i class="ri-global-line ri-xl text-primary"></i>
+                                                <h3 class="text-xl font-semibold text-gray-900">
+                                                    International Recognition
+                                                </h3>
+                                            </div>
+                                            <i
+                                                class="ri-arrow-down-s-line text-primary text-xl transition-transform"></i>
+                                        </button>
+                                        <div
+                                            class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                                            <div class="px-6 pb-6 pt-2">
+                                                <p class="text-gray-700">
+                                                    Certified Management Accountants (CMA) recognized in 170+ countries.
+                                                    Mr. Gyan Krishna Shrestha has championed CMA qualifications in Nepal
+                                                    since 2000, enhancing global financial practices locally.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- CMA Certification Accordion Item -->
+                                    <div class="accordion-item bg-white rounded-lg shadow-lg overflow-hidden">
+                                        <button
+                                            class="accordion-header w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+                                            <div class="flex items-center space-x-4">
+                                                <i class="ri-pass-valid-line ri-xl text-primary"></i>
+                                                <h3 class="text-xl font-semibold text-gray-900">
+                                                    About CMA Certification
+                                                </h3>
+                                            </div>
+                                            <i
+                                                class="ri-arrow-down-s-line text-primary text-xl transition-transform"></i>
+                                        </button>
+                                        <div
+                                            class="accordion-content overflow-hidden transition-all duration-300 max-h-0">
+                                            <div class="px-6 pb-6 pt-2">
+                                                <p class="text-gray-700">
+                                                    Offered by Australia's Institute of Certified Management
+                                                    Accountants,
+                                                    CMA focuses on strategic financial management and value creation.
+                                                    CMAs excel in data analytics, governance, strategic auditing,
+                                                    and global financial leadership across 170+ countries.
+                                                </p>
+                                                <div class="mt-4 p-4 bg-gray-50 rounded-lg">
+                                                    <p class="text-sm text-gray-600">CMA professionals are:</p>
+                                                    <ul class="list-disc pl-4 mt-2 text-gray-700">
+                                                        <li>Strategic business partners</li>
+                                                        <li>Data-driven decision makers</li>
+                                                        <li>Global financial leaders</li>
+                                                        <li>Governance experts</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <style>
+                            .accordion-content {
+                                transition: max-height 0.3s ease-out, opacity 0.2s ease;
+                            }
+
+                            .accordion-item.active .accordion-content {
+                                max-height: 500px;
+                                /* Adjust based on content size */
+                                opacity: 1;
+                            }
+
+                            .accordion-item.active .ri-arrow-down-s-line {
+                                transform: rotate(180deg);
+                            }
+                        </style>
+
+                        <script>
+                            document.querySelectorAll('.accordion-header').forEach(button => {
+                                button.addEventListener('click', () => {
+                                    const accordionItem = button.closest('.accordion-item');
+                                    const content = accordionItem.querySelector('.accordion-content');
+
+                                    // Toggle active class
+                                    accordionItem.classList.toggle('active');
+
+                                    // Close other accordion items
+                                    document.querySelectorAll('.accordion-item').forEach(item => {
+                                        if (item !== accordionItem) {
+                                            item.classList.remove('active');
+                                            item.querySelector('.accordion-content').style.maxHeight = '0';
+                                        }
+                                    });
+
+                                    // Toggle max-height
+                                    if (content.style.maxHeight) {
+                                        content.style.maxHeight = null;
+                                    } else {
+                                        content.style.maxHeight = content.scrollHeight + "px";
+                                    }
+                                });
+                            });
+                        </script>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <!-- 🎓 Client Carousel Section -->
+    <section id="case-studies" class="py-24 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Valued Clients</h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                    A few highlights from our trusted partners.
+                </p>
+            </div>
+
+            <!-- Buttons + Scroll Container -->
+            <div class="relative w-full">
+                <!-- Left Button -->
+                <button id="leftBtn"
+                    class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-md rounded-full p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+
+                <!-- Carousel Track -->
+                <div id="carousel" class="flex overflow-x-auto no-scrollbar space-x-6 scroll-smooth pb-4 px-4 sm:px-10">
+                </div>
+
+                <!-- Right Button -->
+                <button id="rightBtn"
+                    class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white shadow-md rounded-full p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom CSS (scrollbar) -->
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+
+    <!-- Script: Load from data.json and render -->
+    <script>
+        const carousel = document.getElementById("carousel");
+        const leftBtn = document.getElementById("leftBtn");
+        const rightBtn = document.getElementById("rightBtn");
+
+        const importantFirms = [
+            "Nepal Education Foundation (Xavier Academy) Group",
+            "AITM College Group",
+            "Kathmandu Don Bosco",
+            "Nepal Korea Friendship Municipality Hospital",
+            "Chelsea World School & College Pvt. Ltd Group",
+            "Mahendra Vidya Ashram Bhaktapur Pvt. Ltd"
+
+        ];
+
+        let scrollSpeed = 0.5;
+        let paused = false;
+
+        leftBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: -300, behavior: "smooth" });
+        });
+
+        rightBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: 300, behavior: "smooth" });
+        });
+
+        carousel.addEventListener("mouseenter", () => paused = true);
+        carousel.addEventListener("mouseleave", () => paused = false);
+
+        fetch("data.json")
+            .then(res => res.json())
+            .then(data => {
+                const fullData = [...data, ...data]; // duplicate for looping effect
+
+                fullData.forEach(firm => {
+                    const card = document.createElement('div');
+                    const isImportant = importantFirms.includes(firm["Name of Firm"]);
+
+                    card.className = `
+          bg-white rounded-2xl shadow-md border border-gray-200 p-6 min-w-[280px] sm:min-w-[320px]
+          transition-transform hover:-translate-y-2 hover:shadow-xl duration-300 ease-in-out flex-shrink-0 relative
+        `;
+
+                    card.innerHTML = `
+          ${isImportant ? `<span class="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full shadow-sm">★ </span>` : ""}
+          <div class="text-sm text-gray-500 mb-1">Client #${firm["S.N."]}</div>
+          <h3 class="text-lg font-bold text-blue-500 mb-1">${firm["Name of Firm"]}</h3>
+          <p class="text-sm text-gray-700"><span class="font-medium text-gray-800">Type:</span> ${firm["Type"]}</p>
+          <p class="text-sm text-gray-700"><span class="font-medium text-gray-800">Address:</span> ${firm["Address"]}</p>
+        `;
+
+                    carousel.appendChild(card);
+                });
+
+                function animate() {
+                    if (!paused) {
+                        carousel.scrollLeft += scrollSpeed;
+                        if (carousel.scrollLeft >= carousel.scrollWidth / 2) {
+                            carousel.scrollLeft = 0;
+                        }
+                    }
+                    requestAnimationFrame(animate);
+                }
+
+                requestAnimationFrame(animate);
+            });
+    </script>
+
+
+    <!-- Team Section -->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .hover-lift {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-5px);
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 1.5rem;
+            width: 3rem;
+            height: 3rem;
+        }
+
+        @media (max-width: 768px) {
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 2rem;
+                height: 2rem;
+                background-size: 1rem;
+            }
+
+            .col-10 {
+                width: 100% !important;
+            }
+        }
+
+        .card {
+            border: none;
+            border-radius: 1rem;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+        }
+    </style>
+    <!-- Team Section -->
+    <section id="team" class="py-10 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="fade-in text-3xl md:text-4xl font-bold text-gradient mb-4">
+                    Meet Our Leadership Team
+                </h2>
+                <p class="fade-in text-xl text-gray-700 max-w-3xl mx-auto">
+                    Our team of experienced professionals brings diverse expertise to
+                    deliver exceptional auditing services.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="relative h-80">
+                    <div class="team-card w-full h-full pulse-soft">
+                        <div class="team-front bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./assets/img/1Gyan.jpg" alt="Gyan Krishna"
+                                class="w-full h-48 object-cover object-top" />
+                            <div class="p-4 text-center">
+                                <h3 class="text-xl font-semibold text-gray-900">
+                                    Gyan Krishna Shrestha
+                                </h3>
+                                <p class="text-primary">Certified Management Accountant (CMA)</p>
+                                <p class="text-primary">Registered Auditor (RA)</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Team member  2 -->
+                <div class="relative h-80">
+                    <div class="team-card w-full h-full pulse-soft">
+                        <div class="team-front bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./assets/img/asd1.jpeg" alt="Salina Pokhrel"
+                                class="w-full h-48 object-cover object-top" />
+                            <div class="p-4 text-center">
+                                <h3 class="text-xl font-semibold text-gray-900">
+                                    Nujan Shrestha
+                                </h3>
+                                <p class="text-primary">IT Head</p>
+                                <!-- <p class="text-primary">Supporting audit teams with meticulous financial review and analysis.</p> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="relative h-80">
+                    <div class="team-card w-full h-full pulse-soft">
+                        <div class="team-front bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./assets/img/shres.jpg" alt="Subin Bajracharya"
+                                class="w-full h-48 object-cover object-top" />
+                            <div class="p-4 text-center">
+                                <h3 class="text-xl font-semibold text-gray-900">
+                                    Subin Bajracharya
+                                </h3>
+                                <p class="text-primary">Sr.Audit Assistant
+                                </p>
+                                <!-- <p class="text-primary">Detail-oriented Audit Assistant ensuring accuracy and compliance in audits.</p> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="relative h-80">
+                    <div class="team-card w-full h-full pulse-soft">
+                        <div class="team-front bg-white rounded-lg shadow-lg overflow-hidden">
+                            <img src="./assets/img/pokheral.jpg" alt="Salina Pokhrel"
+                                class="w-full h-48 object-cover object-top" />
+                            <div class="p-4 text-center">
+                                <h3 class="text-xl font-semibold text-gray-900">
+                                    Salina Pokhrel
+                                </h3>
+                                <p class="text-primary">Audit Assistant</p>
+                                <!-- <p class="text-primary">Supporting audit teams with meticulous financial review and analysis.</p> -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- gallery -->
+    <!-- Gallery Section -->
+    <section class="py-16 bg-gray-100" id="gallery">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Our Work Gallery</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Gallery Item -->
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
+                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
+                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
+                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
+                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
+                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
+                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
+                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-md">
+                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
+                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+
+    </section>
+    <!-- document section -->
+    <!-- Document Section -->
+    <section class="py-16 bg-white" id="documents">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-semibold mb-8 text-center">Tax Rules & Documents</h2>
+            <ul class="space-y-4">
+                <!-- Document Item -->
+                <li class="flex justify-between items-center bg-gray-50 p-4 rounded shadow">
+                    <div>
+                        <h3 class="text-lg font-medium">Nepal Income Tax Rules 2025</h3>
+                        <p class="text-sm text-gray-500">Updated: July 2025</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="text-blue-600 hover:underline"
+                            onclick="openPDFModal('./1718620336_Tax_Fact_2024-25.pdf')">View</button>
+                        <a href="./1718620336_Tax_Fact_2024-25.pdf" download
+                            class="text-green-600 hover:underline">Download</a>
+                    </div>
+                </li>
+                <!-- Add more documents below -->
+            </ul>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
+        <div class="bg-white w-full max-w-4xl p-4 rounded shadow-lg relative">
+            <button onclick="closePDFModal()" class="absolute top-2 right-2 text-xl">&times;</button>
+            <iframe id="pdfViewer" src="" class="w-full h-[500px] border mt-4 rounded"></iframe>
+            <div class="text-right mt-4">
+                <a id="pdfDownloadLink" href="#" download
+                    class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Download PDF</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openPDFModal(pdfUrl) {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+            const downloadLink = document.getElementById('pdfDownloadLink');
+
+            viewer.src = pdfUrl;
+            downloadLink.href = pdfUrl;
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePDFModal() {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+
+            viewer.src = ''; // stop rendering PDF
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+    </script>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-gray-50 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="fade-in text-3xl md:text-4xl font-bold text-gradient mb-4">
+                    Get in Touch
+                </h2>
+                <p class="fade-in text-xl text-gray-700 max-w-3xl mx-auto">
+                    Ready to elevate your auditing processes? Contact us today to
+                    schedule a consultation with our experts.
+                </p>
+            </div>
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Contact Form -->
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-lg p-8">
+                        <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                            Send Us a Message
+                        </h3>
+                        <form id="contact-form">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                                <input type="text" id="name"
+                                    class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                    placeholder="Your name" />
+                            </div>
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
+                                <input type="email" id="email"
+                                    class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                    placeholder="your.email@company.com" />
+                            </div>
+                            <div class="mb-6">
+                                <label for="company" class="block text-gray-700 mb-2">Company</label>
+                                <input type="text" id="company"
+                                    class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                    placeholder="Your company name" />
+                            </div>
+                            <div class="mb-6">
+                                <label for="service" class="block text-gray-700 mb-2">Service of Interest</label>
+                                <div class="relative">
+                                    <select id="service"
+                                        class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all appearance-none pr-8">
+                                        <option value="" selected disabled>
+                                            Select a service
+                                        </option>
+                                        <option value="financial">Statutory Auditing</option>
+                                        <option value="financial">Financial Auditing</option>
+                                        <option value="financial">Financial Advisory Auditing</option>
+                                        <option value="compliance">Compliance Auditing</option>
+                                        <option value="internal">Internal Auditing</option>
+                                        <option value="it">IT Auditing</option>
+                                        <option value="tax">Tax Auditing</option>
+                                        <option value="forensic">Forensic Auditing</option>
+                                    </select>
+                                    <div
+                                        class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                        <i class="ri-arrow-down-s-line text-gray-500"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-8">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="5"
+                                    class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
+                                    placeholder="Tell us about your auditing needs..."></textarea>
+                            </div>
+                            <button type="submit"
+                                class="cta-button w-full bg-primary text-white px-6 py-3 !rounded-button font-medium shadow-lg hover:shadow-xl transition-all whitespace-nowrap">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <!-- Map and Contact Info -->
+                <div class="w-full lg:w-1/2">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden h-full flex flex-col">
+                        <div class="h-64 relative">
+                            <div class="absolute inset-0 bg-cover bg-center">
+                                <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3510.4402930888346!2d85.38425939999999!3d27.672653799999992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1a6fd92a5c6f%3A0xea10cb4dd3a96b36!2sGyan%20And%20Company!5e1!3m2!1sen!2snp!4v1745481227290!5m2!1sen!2snp"
+                                    width=90% height=90% style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                        <div class="p-8 flex-grow">
+                            <h3 class="text-2xl font-semibold text-gray-900 mb-6">
+                                Contact Information
+                            </h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-map-pin-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">
+                                            Location
+                                        </h4>
+                                        <p class="text-gray-700">
+                                            Madhyapur Thimi, Bhaktapur<br />
+                                            Nepal
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-phone-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Phone</h4>
+                                        <p class="text-gray-700">
+                                            (+977) 01-5093381 <br />
+                                            (+977) 9851035589 <br />
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-mail-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Email</h4>
+                                        <p class="text-gray-700">
+                                            contact@gyanandco.com.np<br />
+                                            gyankrishna@gmail.com <br />
+                                            gyanandcompany4@gmail.com
+                                        </p>
+                                    </div>
+                                    <br />
+                                </div>
+                                <div class="flex items-start">
+                                    <div
+                                        class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mr-4 mt-1">
+                                        <i class="ri-time-line text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-900 mb-1">Hours</h4>
+                                        <p class="text-gray-700">
+                                            Sunday - Friday: 9:00 AM - 6:00 PM<br />
+                                            Saturday : Closed
+                                        </p>
+                                    </div>
+                                </div>
+                                <img src="./assets/img/gyanandco_logo.png" class=" w-1/2 h-auto object-contain">
+                                <!-- <div class="container text-center">
+                                    <a class="cta-btn align-middle" href="#">Call to schedule a meeting</a>
+                                    <img class="container" src="styled_vcard_qr.png" height='20px' width="50px">
+                                  </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Company Info -->
+                <div>
+                    <h1 class="text-3xl font-['Pacifico'] text-white mb-6"><img src="./assets/img/logo_gyans.png"></h1>
+                    <p class="text-gray-400 mb-6">
+                        Delivering precision and excellence in auditing services since
+                        2005. Your trusted partner for financial integrity and compliance.
+                    </p>
+                    <div class="text-sm text-center text-gray-600 mt-6">
+                        Designed & Developed • Crafted with precision •
+                        <a href="https://nujanshrestha.com.np" target="_blank"
+                            class="text-primary hover:underline font-medium">
+                            Nujan Shrestha
+                        </a> © 2025
+                    </div>
+
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#services" class="text-gray-400 hover:text-white transition-colors">Services</a>
+                        </li>
+                        <li>
+                            <a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#case-studies" class="text-gray-400 hover:text-white transition-colors">Case
+                                Studies</a>
+                        </li>
+                        <li>
+                            <a href="#team" class="text-gray-400 hover:text-white transition-colors">Our Team</a>
+                        </li>
+                        <li>
+                            <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Services -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-6">Our Services</h3>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Financial Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Financial Advisory
+                                Services</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Compliance Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Internal Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">IT Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Tax Auditing</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition-colors">Forensic Auditing</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 mb-4 md:mb-0">
+                        &copy; 2025 Gyan & Company. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed bottom-8 right-8 w-12 h-12 bg-primary rounded-full shadow-lg flex items-center justify-center cursor-pointer transition-all hover:scale-110"
+                id="scroll-to-top">
+                <i class="ri-arrow-up-line text-white"></i>
+            </div>
+    </footer>
+
+    <!-- External Resources -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+
+    <!-- Main Scripts -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Scroll to top
+        document.getElementById('scroll-to-top').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Accordion functionality
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.closest('.accordion-item');
+                const content = item.querySelector('.accordion-content');
+
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    // It's open, close it
+                    content.style.maxHeight = '0px';
+                    item.classList.remove('active');
+                } else {
+                    // It's closed, open it
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    item.classList.add('active');
+                }
+            });
+        });
+        ;
+
+
+        // 3D Particle Background
+        document.addEventListener("DOMContentLoaded", () => {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            document.getElementById("hero-scene").appendChild(renderer.domElement);
+
+            // Create particles
+            const particlesCount = 2000;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particlesCount * 3);
+
+            for (let i = 0; i < particlesCount * 3; i += 3) {
+                positions[i] = (Math.random() - 0.5) * 10;
+                positions[i + 1] = (Math.random() - 0.5) * 10;
+                positions[i + 2] = (Math.random() - 0.5) * 10;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const material = new THREE.PointsMaterial({
+                size: 0.02,
+                color: 0x0055a4,
+                transparent: true,
+                opacity: 0.8
+            });
+            const points = new THREE.Points(geometry, material);
+            scene.add(points);
+
+            // Interactive particle movement
+            let mouseX = 0, mouseY = 0;
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                mouseY = (event.clientY / window.innerHeight) * 2 - 1;
+            });
+
+            function animateParticles() {
+                requestAnimationFrame(animateParticles);
+                points.rotation.x += 0.001 + mouseY * 0.005;
+                points.rotation.y += 0.001 + mouseX * 0.005;
+                renderer.render(scene, camera);
+            }
+            animateParticles();
+
+            // Responsive renderer
+            window.addEventListener('resize', () => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            });
+        });
+
+        // 3D Globe
+        document.addEventListener("DOMContentLoaded", () => {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+            camera.position.z = 2;
+
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(300, 300);
+            document.getElementById("globe").appendChild(renderer.domElement);
+
+            // Create globe
+            const geometry = new THREE.SphereGeometry(1, 64, 64);
+            const texture = new THREE.TextureLoader().load('https://threejsfundamentals.org/threejs/resources/images/earth-day.jpg');
+            const material = new THREE.MeshBasicMaterial({ map: texture });
+            const globe = new THREE.Mesh(geometry, material);
+            scene.add(globe);
+
+            function animateGlobe() {
+                requestAnimationFrame(animateGlobe);
+                globe.rotation.y += 0.002;
+                renderer.render(scene, camera);
+            }
+            animateGlobe();
+
+            window.addEventListener('resize', () => {
+                const width = Math.min(300, document.getElementById("globe").offsetWidth);
+                renderer.setSize(width, width);
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("Thank you for your message! We'll get back to you soon.");
+            document.getElementById('contact-form').reset();
+        });
+    </script>
+</body>
+
+</html>
