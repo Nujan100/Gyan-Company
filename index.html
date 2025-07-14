@@ -1155,53 +1155,134 @@
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-semibold mb-8 text-center">Our Work Gallery</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
                 <!-- Gallery Item -->
-                <div class="rounded-lg overflow-hidden shadow-md">
+                <div class="rounded-lg overflow-hidden shadow-md bg-white">
                     <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
-                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                        class="gallery-img w-full h-64 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        data-title="Audit Workshop 2024"
+                        data-description="A glimpse of our recent national audit training session.">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Audit Workshop 2024</h3>
+                        <p class="text-sm text-gray-600">A glimpse of our recent national audit training session.</p>
+                    </div>
                 </div>
-                <div class="rounded-lg overflow-hidden shadow-md">
+
+                <!-- Gallery Item -->
+                <div class="rounded-lg overflow-hidden shadow-md bg-white">
                     <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
-                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                        class="gallery-img w-full h-64 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        data-title="Team Collaboration"
+                        data-description="Our audit team working together on a project.">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Team Collaboration</h3>
+                        <p class="text-sm text-gray-600">Our audit team working together on a project.</p>
+                    </div>
                 </div>
-                <div class="rounded-lg overflow-hidden shadow-md">
+
+                <!-- Gallery Item -->
+                <div class="rounded-lg overflow-hidden shadow-md bg-white">
                     <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
-                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
+                        class="gallery-img w-full h-64 object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        data-title="Field Visit" data-description="On-site audit during the Nepal Revenue Inspection.">
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold">Field Visit</h3>
+                        <p class="text-sm text-gray-600">On-site audit during the Nepal Revenue Inspection.</p>
+                    </div>
                 </div>
-                <div class="rounded-lg overflow-hidden shadow-md">
-                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
-                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="rounded-lg overflow-hidden shadow-md">
-                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
-                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="rounded-lg overflow-hidden shadow-md">
-                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
-                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="rounded-lg overflow-hidden shadow-md">
-                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
-                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="rounded-lg overflow-hidden shadow-md">
-                    <img src="https://old.oag.gov.np/slider/123.jpg" alt="Gallery Image"
-                        class="w-full h-64 object-cover hover:scale-105 transition-transform duration-300">
-                </div>
-                <!-- Add more items as needed -->
+
+                <!-- Add more images the same way -->
+
             </div>
         </div>
-
     </section>
+
+
+    <!-- Modal Section -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg w-full max-w-4xl p-8 relative shadow-xl">
+            <!-- Close Button -->
+            <button id="modalCloseBtn"
+                class="absolute top-2 right-4 text-gray-600 hover:text-black text-3xl font-bold">&times;</button>
+
+            <!-- Image and Info -->
+            <div class="flex flex-col lg:flex-row items-center gap-6">
+                <img id="modalImg" src="" alt="Full View" class="w-full lg:w-1/2 rounded shadow">
+                <div class="w-full lg:w-1/2 text-left">
+                    <h3 id="modalTitle" class="text-2xl font-semibold mb-2"></h3>
+                    <p id="modalDesc" class="text-gray-700 text-lg"></p>
+
+                    <!-- Navigation Buttons -->
+                    <div class="mt-6 flex justify-between">
+                        <button id="prevBtn" class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded shadow">←
+                            Previous</button>
+                        <button id="nextBtn" class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded shadow">Next
+                            →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script>
+        const images = document.querySelectorAll('.gallery-img');
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const modalCloseBtn = document.getElementById('modalCloseBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        let currentIndex = 0;
+        const imageArray = Array.from(images);
+
+        function showModal(index) {
+            const img = imageArray[index];
+            if (!img) return;
+            modalImg.src = img.src;
+            modalTitle.textContent = img.dataset.title || "Untitled Image";
+            modalDesc.textContent = img.dataset.description || "No description available.";
+            modal.classList.remove('hidden');
+            currentIndex = index;
+        }
+
+        images.forEach((img, index) => {
+            img.addEventListener('click', () => showModal(index));
+        });
+
+        modalCloseBtn.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.add('hidden');
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+            showModal(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % imageArray.length;
+            showModal(currentIndex);
+        });
+    </script>
+
     <!-- document section -->
+    <!-- Document Section -->
     <!-- Document Section -->
     <section class="py-16 bg-white" id="documents">
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-3xl font-semibold mb-8 text-center">Tax Rules & Documents</h2>
             <ul class="space-y-4">
                 <!-- Document Item -->
-                <li class="flex justify-between items-center bg-gray-50 p-4 rounded shadow">
-                    <div>
+                <li class="flex flex-col sm:flex-row justify-between sm:items-center bg-gray-50 p-4 rounded shadow">
+                    <div class="mb-2 sm:mb-0">
                         <h3 class="text-lg font-medium">Nepal Income Tax Rules 2025</h3>
                         <p class="text-sm text-gray-500">Updated: July 2025</p>
                     </div>
@@ -1212,10 +1293,47 @@
                             class="text-green-600 hover:underline">Download</a>
                     </div>
                 </li>
-                <!-- Add more documents below -->
+                <!-- Add more documents as needed -->
             </ul>
         </div>
     </section>
+
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg w-full h-full md:w-4/5 md:h-4/5 relative flex flex-col">
+            <!-- Close Button -->
+            <button onclick="closePDFModal()"
+                class="absolute top-2 right-4 text-gray-600 hover:text-black text-3xl font-bold z-10">&times;</button>
+            <!-- PDF Viewer -->
+            <iframe id="pdfViewer" src="" class="w-full h-full rounded-b-lg" loading="lazy" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function openPDFModal(url) {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+            viewer.src = url;
+            modal.classList.remove('hidden');
+        }
+
+        function closePDFModal() {
+            const modal = document.getElementById('pdfModal');
+            const viewer = document.getElementById('pdfViewer');
+            viewer.src = "";
+            modal.classList.add('hidden');
+        }
+
+        // Close on outside click
+        window.addEventListener('click', function (e) {
+            const modal = document.getElementById('pdfModal');
+            if (e.target === modal) {
+                closePDFModal();
+            }
+        });
+    </script>
+
 
     <!-- Modal -->
     <div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
