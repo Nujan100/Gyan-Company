@@ -1,9 +1,13 @@
-class Solution:
-    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
-        lst = []
-        for i in candies:
-            if i + extraCandies >= max(candies):
-                lst.append(True)
-            else:
-                lst.append(False)
-        return lst
+s= 'IceCreAm'
+rev = []
+vowels = ['a','e','i','o','u','A','E','I','O','U']
+pos = []
+s=list(s)
+for i in range(len(s)):
+    if s[i] in vowels:
+        pos.append(i)
+
+for i in range(len(pos)//2):
+    s[pos[0+i]], s[pos[-1-i]] = s[pos[-1-i]], s[pos[0+i]]
+    print(''.join(s))
+    
