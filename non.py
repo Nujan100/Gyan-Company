@@ -1,13 +1,12 @@
-s= 'IceCreAm'
-rev = []
-vowels = ['a','e','i','o','u','A','E','I','O','U']
-pos = []
-s=list(s)
-for i in range(len(s)):
-    if s[i] in vowels:
-        pos.append(i)
+nums = [0,0,1]
 
-for i in range(len(pos)//2):
-    s[pos[0+i]], s[pos[-1-i]] = s[pos[-1-i]], s[pos[0+i]]
-    print(''.join(s))
-    
+i=0
+count =0
+while count < (len(nums)):
+    if nums[i] == 0:
+        nums.pop(i)
+        nums.append(0)
+    else:
+        i = i+1
+    count+=1
+print(nums)

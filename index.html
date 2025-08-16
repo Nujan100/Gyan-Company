@@ -1151,277 +1151,220 @@
     </section>
     <!-- gallery -->
     <!-- Your Section -->
+
     <section class="py-16 bg-gray-100" id="gallery">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-semibold mb-8 text-center">Our Work Gallery</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 
-                <!-- Gallery Item -->
-                <div class="rounded-lg overflow-hidden shadow-md bg-white cursor-pointer open-gallery"
-                    data-title="Audit Workshop 2024"
-                    data-description="A glimpse of our recent national audit training session."
-                    data-images='["https://old.oag.gov.np/slider/123.jpg", "https://intosaijournal.org/wp-content/uploads/2022/01/SAI-Nepal-Building-latest-scaled.jpg", "https://research.butmedia.org/wp-content/uploads/2022/10/DSCF7135-scaled.jpg"]'>
+            <!-- Preview Row -->
+            <div id="gallery-preview" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"></div>
 
-                    <div class="flex h-64">
-                        <div class="w-1/2 h-full">
-                            <img src="https://old.oag.gov.np/slider/123.jpg" class="object-cover w-full h-full" />
-                        </div>
-                        <div class="w-1/2 h-full relative">
-                            <img src="https://intosaijournal.org/wp-content/uploads/2022/01/SAI-Nepal-Building-latest-scaled.jpg"
-                                class="object-cover w-full h-full" />
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-lg font-semibold">
-                                +2 more
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Audit Workshop 2024</h3>
-                        <p class="text-sm text-gray-600">A glimpse of our recent national audit training session.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden shadow-md bg-white cursor-pointer open-gallery"
-                    data-title="Audit Workshop 2024"
-                    data-description="A glimpse of our recent national audit training session."
-                    data-images='["https://old.oag.gov.np/slider/123.jpg", "https://intosaijournal.org/wp-content/uploads/2022/01/SAI-Nepal-Building-latest-scaled.jpg", "https://research.butmedia.org/wp-content/uploads/2022/10/DSCF7135-scaled.jpg"]'>
-
-                    <div class="flex h-64">
-                        <div class="w-1/2 h-full">
-                            <img src="https://old.oag.gov.np/slider/123.jpg" class="object-cover w-full h-full" />
-                        </div>
-                        <div class="w-1/2 h-full relative">
-                            <img src="https://intosaijournal.org/wp-content/uploads/2022/01/SAI-Nepal-Building-latest-scaled.jpg"
-                                class="object-cover w-full h-full" />
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-lg font-semibold">
-                                +2 more
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Audit Workshop 2024</h3>
-                        <p class="text-sm text-gray-600">A glimpse of our recent national audit training session.</p>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden shadow-md bg-white cursor-pointer open-gallery"
-                    data-title="Audit Workshop 2024"
-                    data-description="A glimpse of our recent national audit training session."
-                    data-images='["https://old.oag.gov.np/slider/123.jpg", "https://intosaijournal.org/wp-content/uploads/2022/01/SAI-Nepal-Building-latest-scaled.jpg", "https://research.butmedia.org/wp-content/uploads/2022/10/DSCF7135-scaled.jpg"]'>
-
-                    <div class="flex h-64">
-                        <div class="w-1/2 h-full">
-                            <img src="https://old.oag.gov.np/slider/123.jpg" class="object-cover w-full h-full" />
-                        </div>
-                        <div class="w-1/2 h-full relative">
-                            <img src="https://intosaijournal.org/wp-content/uploads/2022/01/SAI-Nepal-Building-latest-scaled.jpg"
-                                class="object-cover w-full h-full" />
-                            <div
-                                class="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center text-white text-lg font-semibold">
-                                +2 more
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="p-4">
-                        <h3 class="text-lg font-semibold">Audit Workshop 2025</h3>
-                        <p class="text-sm text-gray-600">A glimpse of our recent national audit training session.</p>
-                    </div>
-                </div>
-
+            <!-- Show More Button -->
+            <div class="flex justify-center mt-8">
+                <a href="gallery.html"
+                    class="px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition">
+                    Show More
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- ===== Main Gallery Modal ===== -->
-    <div id="galleryModal"
-        class="fixed inset-0 z-50 bg-black bg-opacity-80 hidden flex items-center justify-center p-4">
-        <div class="relative w-3/4 max-w-6xl bg-white rounded-xl p-6 overflow-y-auto max-h-[90vh]">
-            <button id="closeModal" class="absolute top-3 right-4 text-black text-3xl font-bold">&times;</button>
-            <h3 id="modalTitle" class="text-3xl font-bold mb-2"></h3>
-            <p id="modalDescription" class="text-gray-600 mb-6 text-sm"></p>
-            <div id="modalImages" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4"></div>
-        </div>
+    <!-- Lightbox / Popup -->
+    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+        <button id="closeBtn" class="absolute top-5 right-8 text-white text-3xl font-bold">&times;</button>
+        <button id="prevBtn" class="absolute left-5 text-white text-3xl font-bold">&#10094;</button>
+        <img id="lightboxImage" src="" class="max-h-[80%] max-w-[90%] object-contain rounded-lg shadow-lg" />
+        <button id="nextBtn" class="absolute right-5 text-white text-3xl font-bold">&#10095;</button>
     </div>
 
-    <!-- ===== Image Preview Modal with Arrows ===== -->
-    <div id="imagePreviewModal"
-        class="fixed inset-0 z-50 bg-black bg-opacity-90 hidden items-center justify-center p-4">
-        <button id="closePreview" class="absolute top-4 right-6 text-white text-4xl font-bold">&times;</button>
-        <button id="prevImage"
-            class="absolute left-4 text-white text-4xl font-bold bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">&#8249;</button>
-        <img id="previewImage" src="" alt="Preview"
-            class="max-w-full max-h-[90vh] rounded-xl shadow-xl border-4 border-white" />
-        <button id="nextImage"
-            class="absolute right-4 text-white text-4xl font-bold bg-black bg-opacity-50 rounded-full w-12 h-12 flex items-center justify-center">&#8250;</button>
-    </div>
-
-    <!-- ===== Script ===== -->
     <script>
-        (() => {
-            const galleryModal = document.getElementById("galleryModal");
-            const closeModal = document.getElementById("closeModal");
-            const modalTitle = document.getElementById("modalTitle");
-            const modalDescription = document.getElementById("modalDescription");
-            const modalImages = document.getElementById("modalImages");
+        // Preview images (first row only)
+        const previewImages = ["28.jpeg", "27.jpeg", "30.jpeg"];
+        const basePath = "assets/gallery/";
+        const galleryPreview = document.getElementById("gallery-preview");
 
-            const imagePreviewModal = document.getElementById("imagePreviewModal");
-            const previewImage = document.getElementById("previewImage");
-            const closePreview = document.getElementById("closePreview");
-            const prevImageBtn = document.getElementById("prevImage");
-            const nextImageBtn = document.getElementById("nextImage");
+        // Render preview
+        previewImages.forEach((img, i) => {
+            const card = document.createElement("div");
+            card.className = "rounded-lg overflow-hidden shadow-md bg-white hover:scale-105 transition cursor-pointer";
+            card.innerHTML = `
+      <div class="h-64">
+        <img src="${basePath + img}" data-index="${i}" class="gallery-img object-cover w-full h-full" />
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-center">Tax Workshop</h3>
+        <p class="text-sm text-gray-600 text-center">Preview of our recent events.</p>
+      </div>
+    `;
+            galleryPreview.appendChild(card);
+        });
 
-            let currentImages = [];
-            let currentIndex = 0;
+        // Lightbox logic
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImage = document.getElementById("lightboxImage");
+        const closeBtn = document.getElementById("closeBtn");
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
 
-            // Open Gallery Modal
-            document.querySelectorAll(".open-gallery").forEach(item => {
-                item.addEventListener("click", () => {
-                    const title = item.getAttribute("data-title");
-                    const description = item.getAttribute("data-description");
-                    currentImages = JSON.parse(item.getAttribute("data-images"));
+        let currentIndex = 0;
 
-                    modalTitle.innerText = title;
-                    modalDescription.innerText = description;
-                    modalImages.innerHTML = "";
-
-                    currentImages.forEach((src, index) => {
-                        const img = document.createElement("img");
-                        img.src = src;
-                        img.className = "w-full h-60 object-cover rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300";
-                        img.onclick = () => {
-                            currentIndex = index;
-                            previewImage.src = currentImages[currentIndex];
-                            imagePreviewModal.classList.remove("hidden");
-                            imagePreviewModal.classList.add("flex");
-                        };
-                        modalImages.appendChild(img);
-                    });
-
-                    galleryModal.classList.remove("hidden");
-                });
-            });
-
-            // Close Gallery Modal
-            closeModal.addEventListener("click", () => galleryModal.classList.add("hidden"));
-            galleryModal.addEventListener("click", (e) => {
-                if (e.target === galleryModal) galleryModal.classList.add("hidden");
-            });
-
-            // Close Preview Modal
-            closePreview.addEventListener("click", () => imagePreviewModal.classList.add("hidden"));
-            imagePreviewModal.addEventListener("click", (e) => {
-                if (e.target === imagePreviewModal) imagePreviewModal.classList.add("hidden");
-            });
-
-            // Navigation Buttons
-            prevImageBtn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
-                previewImage.src = currentImages[currentIndex];
-            });
-
-            nextImageBtn.addEventListener("click", (e) => {
-                e.stopPropagation();
-                currentIndex = (currentIndex + 1) % currentImages.length;
-                previewImage.src = currentImages[currentIndex];
-            });
-        })();
-    </script>
-
-
-    <!-- Document Section -->
-    <section class="py-16 bg-white" id="documents">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-semibold mb-8 text-center">Tax Rules & Documents</h2>
-            <ul class="space-y-4">
-                <!-- Document Item -->
-                <li class="flex flex-col sm:flex-row justify-between sm:items-center bg-gray-50 p-4 rounded shadow">
-                    <div class="mb-2 sm:mb-0">
-                        <h3 class="text-lg font-medium">Nepal Income Tax Rules 2025</h3>
-                        <p class="text-sm text-gray-500">Updated: July 2025</p>
-                    </div>
-                    <div class="flex space-x-4">
-                        <button class="text-blue-600 hover:underline"
-                            onclick="openPDFModal('./1718620336_Tax_Fact_2024-25.pdf')">View</button>
-                        <a href="./1718620336_Tax_Fact_2024-25.pdf" download
-                            class="text-green-600 hover:underline">Download</a>
-                    </div>
-                </li>
-                <!-- Add more documents as needed -->
-            </ul>
-        </div>
-    </section>
-
-    <!-- PDF Modal -->
-    <div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 hidden">
-        <div class="bg-white rounded-lg w-full h-full md:w-4/5 md:h-4/5 relative flex flex-col">
-            <!-- Close Button -->
-            <button onclick="closePDFModal()"
-                class="absolute top-2 right-4 text-gray-600 hover:text-black text-3xl font-bold z-10">&times;</button>
-            <!-- PDF Viewer -->
-            <iframe id="pdfViewer" src="" class="w-full h-full rounded-b-lg" loading="lazy" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- JavaScript -->
-    <script>
-        function openPDFModal(url) {
-            const modal = document.getElementById('pdfModal');
-            const viewer = document.getElementById('pdfViewer');
-            viewer.src = url;
-            modal.classList.remove('hidden');
+        // Open lightbox
+        function openLightbox(index) {
+            currentIndex = index;
+            lightboxImage.src = basePath + previewImages[currentIndex];
+            lightbox.classList.remove("hidden");
         }
 
-        function closePDFModal() {
-            const modal = document.getElementById('pdfModal');
-            const viewer = document.getElementById('pdfViewer');
-            viewer.src = "";
-            modal.classList.add('hidden');
-        }
+        // Close lightbox
+        closeBtn.addEventListener("click", () => lightbox.classList.add("hidden"));
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) lightbox.classList.add("hidden");
+        });
 
-        // Close on outside click
-        window.addEventListener('click', function (e) {
-            const modal = document.getElementById('pdfModal');
-            if (e.target === modal) {
-                closePDFModal();
-            }
+        // Navigation
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + previewImages.length) % previewImages.length;
+            lightboxImage.src = basePath + previewImages[currentIndex];
+        });
+
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % previewImages.length;
+            lightboxImage.src = basePath + previewImages[currentIndex];
+        });
+
+        // Attach click events
+        document.querySelectorAll(".gallery-img").forEach(img => {
+            img.addEventListener("click", (e) => {
+                openLightbox(parseInt(e.target.dataset.index));
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener("keydown", (e) => {
+            if (lightbox.classList.contains("hidden")) return;
+            if (e.key === "ArrowRight") nextBtn.click();
+            if (e.key === "ArrowLeft") prevBtn.click();
+            if (e.key === "Escape") closeBtn.click();
         });
     </script>
 
 
-    <!-- Modal -->
-    <div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-70 hidden items-center justify-center z-50">
-        <div class="bg-white w-full max-w-4xl p-4 rounded shadow-lg relative">
-            <button onclick="closePDFModal()" class="absolute top-2 right-2 text-xl">&times;</button>
-            <iframe id="pdfViewer" src="" class="w-full h-[500px] border mt-4 rounded"></iframe>
-            <div class="text-right mt-4">
-                <a id="pdfDownloadLink" href="#" download
-                    class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Download PDF</a>
+
+
+    <!-- Document Section -->
+    <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-3xl font-semibold mb-8 text-center">Tax Rules & Documents</h2>
+        <ul id="pdf-list" class="space-y-4">
+            <!-- First 3 PDFs (Always Visible) -->
+            <li class="flex flex-col sm:flex-row justify-between sm:items-center bg-gray-50 p-4 rounded shadow">
+                <div class="mb-2 sm:mb-0">
+                    <h3 class="text-lg font-medium">Nepal Income Tax Rules 2025</h3>
+                    <p class="text-sm text-gray-500">Updated: July 2025</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="text-blue-600 hover:underline"
+                        onclick="openPDFModal('assets/pdfs/1718620336_Tax_Fact_2024-25.pdf')">View</button>
+                    <a href="assets/pdfs/1718620336_Tax_Fact_2024-25.pdf" download
+                        class="text-green-600 hover:underline">Download</a>
+                </div>
+            </li>
+
+            <li class="flex flex-col sm:flex-row justify-between sm:items-center bg-gray-50 p-4 rounded shadow">
+                <div class="mb-2 sm:mb-0">
+                    <h3 class="text-lg font-medium">आयकर ऐन, २०५८</h3>
+                    <p class="text-sm text-gray-500">PDF Document</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="text-blue-600 hover:underline"
+                        onclick="openPDFModal('assets/pdfs/471429112.pdf')">View</button>
+                    <a href="assets/pdfs/471429112.pdf" download class="text-green-600 hover:underline">Download</a>
+                </div>
+            </li>
+
+            <li class="flex flex-col sm:flex-row justify-between sm:items-center bg-gray-50 p-4 rounded shadow">
+                <div class="mb-2 sm:mb-0">
+                    <h3 class="text-lg font-medium">आयकर ऐन, २०५८</h3>
+                    <p class="text-sm text-gray-500">PDF Document</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="text-blue-600 hover:underline"
+                        onclick="openPDFModal('assets/pdfs/990506937.pdf')">View</button>
+                    <a href="assets/pdfs/990506937.pdf" download class="text-green-600 hover:underline">Download</a>
+                </div>
+            </li>
+
+            <!-- Hidden PDFs (Initially Hidden) -->
+            <div id="hidden-pdfs" class="hidden space-y-4">
+                <li class="flex flex-col sm:flex-row justify-between sm:items-center bg-gray-50 p-4 rounded shadow">
+                    <div class="mb-2 sm:mb-0">
+                        <h3 class="text-lg font-medium">कर ऐन, २०५२</h3>
+                        <p class="text-sm text-gray-500">PDF Document</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="text-blue-600 hover:underline"
+                            onclick="openPDFModal('assets/pdfs/990506937 (1).pdf')">View</button>
+                        <a href="assets/pdfs/990506937 (1).pdf" download
+                            class="text-green-600 hover:underline">Download</a>
+                    </div>
+                </li>
+
+                <li class="flex flex-col sm:flex-row justify-between sm:items-center bg-gray-50 p-4 rounded shadow">
+                    <div class="mb-2 sm:mb-0">
+                        <h3 class="text-lg font-medium">Guidance Note ARDAS</h3>
+                        <p class="text-sm text-gray-500">PDF Document</p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <button class="text-blue-600 hover:underline"
+                            onclick="openPDFModal('assets/pdfs/Guidance_note_ARDAS(3).pdf')">View</button>
+                        <a href="assets/pdfs/Guidance_note_ARDAS(3).pdf" download
+                            class="text-green-600 hover:underline">Download</a>
+                    </div>
+                </li>
             </div>
+        </ul>
+
+        <!-- Show More Button -->
+        <div class="text-center mt-6">
+            <button id="toggleButton" onclick="togglePDFs()"
+                class="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                Show More
+            </button>
         </div>
     </div>
+
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="fixed inset-0 bg-black bg-opacity-70 hidden flex items-center justify-center z-50">
+        <div class="bg-white w-11/12 md:w-3/4 lg:w-2/3 h-5/6 rounded-lg shadow-lg flex flex-col">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-lg font-semibold">PDF Viewer</h3>
+                <button onclick="closePDFModal()" class="text-red-600 text-xl">&times;</button>
+            </div>
+            <iframe id="pdfFrame" src="" class="flex-1 w-full"></iframe>
+        </div>
+    </div>
+
     <script>
         function openPDFModal(pdfUrl) {
-            const modal = document.getElementById('pdfModal');
-            const viewer = document.getElementById('pdfViewer');
-            const downloadLink = document.getElementById('pdfDownloadLink');
-
-            viewer.src = pdfUrl;
-            downloadLink.href = pdfUrl;
-
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
+            document.getElementById("pdfFrame").src = pdfUrl;
+            document.getElementById("pdfModal").classList.remove("hidden");
         }
 
         function closePDFModal() {
-            const modal = document.getElementById('pdfModal');
-            const viewer = document.getElementById('pdfViewer');
+            document.getElementById("pdfFrame").src = "";
+            document.getElementById("pdfModal").classList.add("hidden");
+        }
 
-            viewer.src = ''; // stop rendering PDF
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
+        function togglePDFs() {
+            const hiddenSection = document.getElementById("hidden-pdfs");
+            const btn = document.getElementById("toggleButton");
+
+            if (hiddenSection.classList.contains("hidden")) {
+                hiddenSection.classList.remove("hidden");
+                btn.textContent = "Show Less";
+            } else {
+                hiddenSection.classList.add("hidden");
+                btn.textContent = "Show More";
+            }
         }
     </script>
 

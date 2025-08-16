@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Back Button -->
+  <div class="max-w-6xl mx-auto px-4 py-6">
+    <a href="index.html" 
+       class="px-4 py-2 bg-gray-700 text-white rounded-lg shadow hover:bg-gray-900 transition">
+      ← Back
+    </a>
+  </div>
+
+  <!-- Gallery Section -->
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-3xl font-semibold mb-8 text-center">Our Work Gallery</h2>
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
+    </div>
+  </section>
+
+  <!-- Lightbox / Popup -->
+  <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50">
+    <button id="closeBtn" class="absolute top-5 right-8 text-white text-3xl font-bold">&times;</button>
+    <button id="prevBtn" class="absolute left-5 text-white text-3xl font-bold">&#10094;</button>
+    <img id="lightboxImage" src="" class="max-h-[80%] max-w-[90%] object-contain rounded-lg shadow-lg" />
+    <button id="nextBtn" class="absolute right-5 text-white text-3xl font-bold">&#10095;</button>
+  </div>
+
+  <script>
+    // Full list of images
+    const galleryImages = [
+      "1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg","6.jpeg","7.jpeg","8.jpeg","9.jpeg","10.jpeg",
+      "11.jpeg","12.jpeg","21.jpeg","22.jpeg","23.jpeg","24.jpeg","25.jpeg","26.jpeg","27.jpeg",
+      "28.jpeg","29.jpeg","30.jpeg","31.jpeg","32.jpeg","33.jpeg","34.jpeg","35.jpeg"
+    ];
+    const basePath = "assets/gallery/";
+    const galleryGrid = document.getElementById("gallery-grid");
+
+    // Render gallery cards
+    galleryImages.forEach((img, i) => {
+      const card = document.createElement("div");
+      card.className = "rounded-lg overflow-hidden shadow-md bg-white hover:scale-105 transition cursor-pointer";
+      card.innerHTML = `
+        <div class="h-64">
+          <img src="${basePath + img}" data-index="${i}" class="gallery-img object-cover w-full h-full" />
+        </div>
+        `;
+        // <div class="p-4">
+        //   <h3 class="text-lg font-semibold">Gallery Item ${i + 1}</h3>
+        //   <p class="text-sm text-gray-600">Description of this event/photo.</p>
+        // </div>
+      galleryGrid.appendChild(card);
+    });
+
+    // Lightbox logic
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightboxImage");
+    const closeBtn = document.getElementById("closeBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    let currentIndex = 0;
+
+    // Open lightbox
+    function openLightbox(index) {
+      currentIndex = index;
+      lightboxImage.src = basePath + galleryImages[currentIndex];
+      lightbox.classList.remove("hidden");
+    }
+
+    // Close lightbox
+    closeBtn.addEventListener("click", () => lightbox.classList.add("hidden"));
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) lightbox.classList.add("hidden");
+    });
+
+    // Navigation
+    prevBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+      lightboxImage.src = basePath + galleryImages[currentIndex];
+    });
+
+    nextBtn.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % galleryImages.length;
+      lightboxImage.src = basePath + galleryImages[currentIndex];
+    });
+
+    // Attach click events to images
+    document.querySelectorAll(".gallery-img").forEach(img => {
+      img.addEventListener("click", (e) => {
+        openLightbox(parseInt(e.target.dataset.index));
+      });
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      if (lightbox.classList.contains("hidden")) return;
+      if (e.key === "ArrowRight") nextBtn.click();
+      if (e.key === "ArrowLeft") prevBtn.click();
+      if (e.key === "Escape") closeBtn.click();
+    });
+  </script>
+</body>
+</html>
