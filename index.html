@@ -1389,39 +1389,39 @@
                         </h3>
                         <form id="contact-form">
                             <div class="mb-6">
-                                <label for="name" class="block text-gray-700 mb-2">Full Name</label>
-                                <input type="text" id="name"
+                                <label for="name" class="block text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="name" name="name" required
                                     class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                                     placeholder="Your name" />
                             </div>
                             <div class="mb-6">
-                                <label for="email" class="block text-gray-700 mb-2">Email Address</label>
-                                <input type="email" id="email"
+                                <label for="email" class="block text-gray-700 mb-2">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" id="email" name="email" required
                                     class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                                     placeholder="your.email@company.com" />
                             </div>
                             <div class="mb-6">
                                 <label for="company" class="block text-gray-700 mb-2">Company</label>
-                                <input type="text" id="company"
+                                <input type="text" id="company" name="company"
                                     class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                                     placeholder="Your company name" />
                             </div>
                             <div class="mb-6">
                                 <label for="service" class="block text-gray-700 mb-2">Service of Interest</label>
                                 <div class="relative">
-                                    <select id="service"
+                                    <select id="service" name="service"
                                         class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all appearance-none pr-8">
                                         <option value="" selected disabled>
                                             Select a service
                                         </option>
-                                        <option value="financial">Statutory Auditing</option>
-                                        <option value="financial">Financial Auditing</option>
-                                        <option value="financial">Financial Advisory Auditing</option>
-                                        <option value="compliance">Compliance Auditing</option>
-                                        <option value="internal">Internal Auditing</option>
-                                        <option value="it">IT Auditing</option>
-                                        <option value="tax">Tax Auditing</option>
-                                        <option value="forensic">Forensic Auditing</option>
+                                        <option value="Statutory Auditing">Statutory Auditing</option>
+                                        <option value="Financial Auditing">Financial Auditing</option>
+                                        <option value="Financial Advisory">Financial Advisory</option>
+                                        <option value="Compliance Auditing">Compliance Auditing</option>
+                                        <option value="Internal Auditing">Internal Auditing</option>
+                                        <option value="IT Auditing">IT Auditing</option>
+                                        <option value="Tax Auditing">Tax Auditing</option>
+                                        <option value="Forensic Auditing">Forensic Auditing</option>
                                     </select>
                                     <div
                                         class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
@@ -1430,8 +1430,8 @@
                                 </div>
                             </div>
                             <div class="mb-8">
-                                <label for="message" class="block text-gray-700 mb-2">Message</label>
-                                <textarea id="message" rows="5"
+                                <label for="message" class="block text-gray-700 mb-2">Message <span class="text-red-500">*</span></label>
+                                <textarea id="message" name="message" rows="5" required
                                     class="form-input w-full px-4 py-3 rounded border-none bg-gray-50 focus:ring-2 focus:ring-primary focus:outline-none transition-all"
                                     placeholder="Tell us about your auditing needs..."></textarea>
                             </div>
@@ -1739,13 +1739,10 @@
             });
         });
 
-        // Form submission
-        document.getElementById('contact-form')?.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert("Thank you for your message! We'll get back to you soon.");
-            document.getElementById('contact-form').reset();
-        });
     </script>
+    
+    <!-- Contact Form Handler Script -->
+    <script src="./assets/js/contact-form.js"></script>
 </body>
 
 </html>
